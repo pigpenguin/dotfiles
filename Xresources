@@ -1,0 +1,36 @@
+!!----------------!!
+!!  Digital Love  !!
+!! Made by phyrne !!
+!!----------------!!
+*background: #000000
+*foreground: #808080
+!Black/Dark Grey
+*color0: #1a1a1a
+*color8: #404040
+! Red/Light Red
+*color1: #F4343F
+*color9: #FF5756
+! Green/Light Green
+*color2:  #A0EB3E
+*color10: #B2FF5E
+! Yellow/Light Yellow
+*color3:  #FFA446
+*color11: #F5BE58
+! Blue/Light Blue
+*color4:  #30C4C9
+*color12: #69D2E7
+! Magenta/Light Magenta
+*color5:  #FF9E9D
+*color13: #FFD8D8
+! Cyan/Light Cyan
+*color6:  #4ECDC4
+*color14: #C8FAFF
+! White/Grey
+*color7:  #FEF8D8
+*color15: #756160
+
+!!-----------------!!
+!! Urxvt specifics !!
+!!-----------------!!
+urxvt.cursorColor: #F4343F
+urxvt*scrollBar: false
