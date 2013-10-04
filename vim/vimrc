@@ -1,0 +1,11 @@
+set foldmethod=syntax
+set showcmd
+set rnu
+syntax on
+
+"Tab related shit
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set autoindent
