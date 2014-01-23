@@ -1,36 +1,67 @@
 !!----------------!!
 !!  Digital Love  !!
-!! Made by phyrne !!
+!! Made by phyrne !! 
 !!----------------!!
 *background: #000000
 *foreground: #808080
-!Black/Dark Grey
-*color0: #1a1a1a
-*color8: #404040
-! Red/Light Red
-*color1: #F4343F
-*color9: #FF5756
-! Green/Light Green
-*color2:  #A0EB3E
-*color10: #B2FF5E
-! Yellow/Light Yellow
-*color3:  #FFA446
-*color11: #F5BE58
-! Blue/Light Blue
-*color4:  #30C4C9
-*color12: #69D2E7
-! Magenta/Light Magenta
-*color5:  #FF9E9D
-*color13: #FFD8D8
-! Cyan/Light Cyan
-*color6:  #4ECDC4
-*color14: #C8FAFF
-! White/Grey
-*color7:  #FEF8D8
-*color15: #756160
+!Black
+*color0:     #1a1a1a
+*color8:     #404040
+!Red
+*color1:     #f4343f
+*color9:     #ff5756
+!Green
+*color2:     #aoeb3e
+*color10:    #b2ff5e
+!Yellow
+*color3:     #ffa446
+*color11:    #f5be58
+!Blue
+*color4:     #30c4c9
+*color12:    #69d2e7
+!Magenta
+*color5:     #ff9e9d
+*color13:    #ffd8d8
+!Cyan
+*color6:     #4ecdc4
+*color14:    #c8faff
+!White
+*color7:     #fef8d8
+*color15:    #756160
+! font settings --------------------------------------------------------------
 
-!!-----------------!!
-!! Urxvt specifics !!
-!!-----------------!!
-urxvt.cursorColor: #F4343F
-urxvt*scrollBar: false
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+!Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! xscreensaver ---------------------------------------------------------------
+
+!font settings
+xscreensaver.Dialog.headingFont:        -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #101010
+xscreensaver.Dialog.background:         #D8D8D8
+xscreensaver.Dialog.topShadowColor:     #D8D8D8
+xscreensaver.Dialog.bottomShadowColor:  #D8D8D8
+xscreensaver.Dialog.Button.foreground:  #101010
+xscreensaver.Dialog.Button.background:  #E5E5E5
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #101010
+xscreensaver.Dialog.text.background:    #E5E5E5
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #101010
+xscreensaver.passwd.thermometer.background:  #2E2E2E
+xscreensaver.passwd.thermometer.width:       8
