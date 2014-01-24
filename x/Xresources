@@ -11,7 +11,7 @@
 *color1:     #f4343f
 *color9:     #ff5756
 !Green
-*color2:     #aoeb3e
+*color2:     #a0eb3e
 *color10:    #b2ff5e
 !Yellow
 *color3:     #ffa446
@@ -28,6 +28,11 @@
 !White
 *color7:     #fef8d8
 *color15:    #756160
+
+!!--urxvt-settings-!!
+urxvt.CursorColor: #f4343f
+urxvt*scrollBar:   false
+
 ! font settings --------------------------------------------------------------
 
 Xft.autohint: true
