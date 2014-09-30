@@ -9,3 +9,6 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set autoindent
+
+execute pathogen#infect()
+filetype plugin indent on
