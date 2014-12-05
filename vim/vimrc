@@ -4,6 +4,7 @@ syntax enable          " Enables syntax highlighting
 set rnu                " Relative line numbers, helps with movements
 set nu                 " Shows the real line number on current line
 set wildmenu           " Shows auto complete options
+set cursorline         " highlights the line the cursor is on
 " }}}
 " Misc {{{
 set nocompatible
@@ -44,6 +45,8 @@ nmap <leader>a:: :Tabularize /:\\zs<cr>
 vmap <leader>a:: :Tabularize /:\\zs<cr>
 nmap <leader>a, :Tabularize /,<cr>
 vmap <leader>a, :Tabularize /,<cr>
+nmap <leader>a\| :Tabularize /\|<cr> 
+vmap <leader>a\| :Tabularize /\|<cr>
 " }}}
 nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>t :TagbarToggle<cr>
