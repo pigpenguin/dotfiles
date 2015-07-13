@@ -1,4 +1,4 @@
-"Vim config stuff
+"vim confiig stuff
 
 "Colors {{{
 colorscheme molokai       "  Sets the colorscheme
@@ -9,7 +9,9 @@ syntax enable             "  Enables syntax highlighting
 set tabstop=4             "  Tabs show up as 4 spaces
 set softtabstop=4         "  Number of spaces per tab
 set expandtab             "  Tabs become spaces
+set shiftwidth=4          " Sets indent size
 set modelines=1
+set autoindent
 "}}}
 
 "Ui stuff {{{
@@ -27,5 +29,24 @@ set foldmethod=syntax     "  Fold based on syntax
 
 "Plugins {{{
 execute pathogen#infect()
+
+let mapleader="," "Make the leader comma
+
+"Gundo
+nnoremap <leader>u :GundoToggle<CR>
+
 "}}}
+
+"Haskell {{{
+
+"Hdev {{{
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>           "Pressing f1 shows type
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR> "Pressing f2 clears
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>  "Pressing f3 shows info
+"}}}
+
+"}}}
+
+filetype plugin on
+
 " vim:foldmethod=marker:foldlevel=0
