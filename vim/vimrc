@@ -1,58 +1,31 @@
-" Ui stuff {{{
-colorscheme flattown   " Sets the colorscheme
-syntax enable          " Enables syntax highlighting
-set rnu                " Relative line numbers, helps with movements
-set nu                 " Shows the real line number on current line
-set wildmenu           " Shows auto complete options
-set cursorline         " highlights the line the cursor is on
-" }}}
-" Misc {{{
-set nocompatible
-set showcmd            " Shows the last used command in the bottom
-set modelines=1        " enables reading mode lines for file specific settings
-" }}}
-"Tabs {{{
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
-set autoindent
-" }}}
-"Fold {{{
-set foldenable         " Enables Folding
-set foldmethod=syntax  " Folds based on syntax rules
-set foldlevelstart=0   " Start every file completly folded
+"Vim config stuff
+
+"Colors {{{
+colorscheme molokai       "  Sets the colorscheme
+syntax enable             "  Enables syntax highlighting
 "}}}
-" Search {{{
-set ignorecase         " ignore case search
-set incsearch          " search as you type
-set hlsearch           " highlight search results
-" }}}
-" Window commands {{{
-nmap <silent> <A-Up> :wincmd k<CR>    " Pressing alt plus an arrow key switches the window
-nmap <silent> <A-Down> :wincmd j<CR>  " Pressing alt plus an arrow key switches the window
-nmap <silent> <A-Left> :wincmd h<CR>  " Pressing alt plus an arrow key switches the window
-nmap <silent> <A-Right> :wincmd l<CR> " Pressing alt plus an arrow key switches the window
-" }}}
-" Plugins{{{
-let mapleader=","
-" Tabular commands {{{
-nmap <leader>a= :Tabularize /=<cr>
-vmap <leader>a= :Tabularize /=<cr>
-nmap <leader>a: :Tabularize /:<cr>
-vmap <leader>a: :Tabularize /:<cr>
-nmap <leader>a:: :Tabularize /:\zs<cr>
-vmap <leader>a:: :Tabularize /:\zs<cr>
-nmap <leader>a, :Tabularize /,<cr>
-vmap <leader>a, :Tabularize /,<cr>
-nmap <leader>a\| :Tabularize /\|<cr> 
-vmap <leader>a\| :Tabularize /\|<cr>
-" }}}
-nnoremap <leader>u :GundoToggle<cr>
-nnoremap <leader>t :TagbarToggle<cr>
-" }}}
-" Pathogen {{{
+
+"Tabs {{{
+set tabstop=4             "  Tabs show up as 4 spaces
+set softtabstop=4         "  Number of spaces per tab
+set expandtab             "  Tabs become spaces
+set modelines=1
+"}}}
+
+"Ui stuff {{{
+set relativenumber        "  Turns on relative line numbers
+set cursorline            "  Highlight current line
+set showcmd               "  Show last cmd used
+set lazyredraw            "  Only draw when needed
+set showmatch             "  Highlight matching brackets
+"}}}
+
+"Folds {{{
+set foldenable            "  Turns on folding
+set foldmethod=syntax     "  Fold based on syntax
+"}}}
+
+"Plugins {{{
 execute pathogen#infect()
-filetype plugin indent on
-" }}}
-" vim:foldmethod=marker
+"}}}
+" vim:foldmethod=marker:foldlevel=0
