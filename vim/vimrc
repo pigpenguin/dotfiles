@@ -1,14 +1,14 @@
 "vim confiig stuff
 
 "Colors {{{
-colorscheme molokai       "  Sets the colorscheme
+colorscheme molokai        "  Sets the colorscheme
 syntax enable             "  Enables syntax highlighting
 "}}}
 
 "Tabs {{{
-set tabstop=4             "  Tabs show up as 4 spaces
-set softtabstop=4         "  Number of spaces per tab
-set expandtab             "  Tabs become spaces
+set tabstop=4             " Tabs show up as 4 spaces
+set softtabstop=4         " Number of spaces per tab
+set expandtab             " Tabs become spaces
 set shiftwidth=4          " Sets indent size
 set modelines=1
 set autoindent
@@ -39,14 +39,21 @@ nnoremap <leader>u :GundoToggle<CR>
 
 "Haskell {{{
 
+filetype plugin on " Haskell plugins need to detect when I'm working on haskell
+
 "Hdev {{{
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>           "Pressing f1 shows type
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR> "Pressing f2 clears
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>  "Pressing f3 shows info
 "}}}
 
-"}}}
+"Haskell Conceal{{{
+let hscoptions="℘𝐒𝐓𝐄𝐌xerb↱w-iRT" " This disables most of the plugin.
+                                 " All of these either render poorly or I have
+                                 " no idea what the symbol means...
+" }}}
 
-filetype plugin on
+
+"}}}
 
 " vim:foldmethod=marker:foldlevel=0
