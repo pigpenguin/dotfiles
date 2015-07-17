@@ -19,3 +19,4 @@ prompt="%{$fg[yellow]%}|%{$reset_color%}%{$fg[green]%}%M%{$reset_color%} %{$fg[r
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+source $HOME/.aliases
