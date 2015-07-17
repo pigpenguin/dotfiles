@@ -1,0 +1,10 @@
+#Volume control
+
+"/usr/bin/amixer -q set Master toggle"
+    XF86AudioMute
+
+"/usr/bin/amixer -q set Master 5%-"
+    XF86AudioLowerVolume
+
+"/usr/bin/amixer -q set Master 5%+"
+    XF86AudioRaiseVolume

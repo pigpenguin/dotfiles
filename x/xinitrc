@@ -38,8 +38,10 @@ fi
 # Set background
 xsetroot -solid "#282828"
 
-# Select Window Manager
+#Create keybindings
+xbindkeys
 
+# Select Window Manager
 case $1 in
 ratpoison)
         exec ratpoison
