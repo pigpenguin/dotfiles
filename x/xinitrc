@@ -41,20 +41,25 @@ xsetroot -solid "#282828"
 #Create keybindings
 xbindkeys
 
-# Select Window Manager
-case $1 in
-ratpoison)
-        exec ratpoison
-        ;;
-2bwm)
-        exec 2bwm
-        ;;
-musca)
-        exec musca
-        ;;
-herbs|*) 
-        exec herbstluftwm -c ~/.herbstluftwm/autostart
-        ;;
+#Start up the urxvt daemon
+urxvtd -q -f -o
 
-esac
+# Select Window Manager
+#case $1 in
+#ratpoison)
+        #exec ratpoison
+        #;;
+#2bwm)
+        #exec 2bwm
+        #;;
+#musca)
+        #exec musca
+        #;;
+#herbs|*) 
+        #exec herbstluftwm -c ~/.herbstluftwm/autostart
+        #;;
+#
+#esac
+
+exec herbstluftwm --lock
 

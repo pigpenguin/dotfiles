@@ -21,7 +21,7 @@ Mod=Mod1    # Use alt as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
-hc keybind $Mod-Return spawn urxvt
+hc keybind $Mod-Return spawn urxvtc
 hc keybind $Mod-Shift-p pseudotile
 hc keybind $Mod-p spawn dmenu_run
 
