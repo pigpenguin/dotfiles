@@ -1,4 +1,4 @@
-"vim confiig stuff
+"""vim config stuff
 
 "Colors {{{
 colorscheme molokai        "  Sets the colorscheme
