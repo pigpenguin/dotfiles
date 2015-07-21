@@ -48,7 +48,7 @@ au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>  "Pressin
 "}}}
 
 "Haskell Conceal{{{
-let hscoptions="℘𝐒𝐓𝐄𝐌xerb↱w-iRT" " This disables most of the plugin.
+let hscoptions="℘𝐒𝐓𝐄𝐌xerb↱w-iRt" " This disables most of the plugin.
                                  " All of these either render poorly or I have
                                  " no idea what the symbol means...
 " }}}
