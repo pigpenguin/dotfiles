@@ -2,7 +2,7 @@
 
 nowPlaying() {
     cur=`mpc -f "%title% - %artist%" current`
-    test -n "$cur" && echo "%{T2}%{T1} $cur" || echo "- stopped -"
+    test -n "$cur" && echo "%{A1:mpc prev:}%{A2:mpc toggle:}%{A3:mpc next:}%{T2}%{T1} $cur%{A}%{A}%{A}" || echo "- stopped -"
 }
 
 volume(){
@@ -44,8 +44,6 @@ workspaces() {
     done
     echo $out
 }
-
-
 
 while :; do
     buf="%{c}"
