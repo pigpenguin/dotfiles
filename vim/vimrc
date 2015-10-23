@@ -1,10 +1,5 @@
 """vim config stuff
 
-"Colors {{{
-colorscheme molokai        "  Sets the colorscheme
-syntax enable             "  Enables syntax highlighting
-"}}}
-
 "Tabs {{{
 set tabstop=4             " Tabs show up as 4 spaces
 set softtabstop=4         " Number of spaces per tab
@@ -25,6 +20,7 @@ set showmatch             "  Highlight matching brackets
 "Folds {{{
 set foldenable            "  Turns on folding
 set foldmethod=syntax     "  Fold based on syntax
+set foldcolumn=3          "  Show the folds in the left column
 "}}}
 
 "Plugins {{{
@@ -53,7 +49,23 @@ let hscoptions="℘𝐒𝐓𝐄𝐌xerb↱w-iRt" " This disables most of the plu
                                  " no idea what the symbol means...
 " }}}
 
+" Auto Complete {{{
+let g:necoghc_enable_detailed_browse = 1 "Adds type signatures to the autocomplete
+let g:neocomplete#enable_at_startup  = 1 "Enable autocomplete by default
+" }}}
 
 "}}}
+
+"Colors {{{
+"  Some nice colorschemes include
+"  Tomorrow-Night
+"  Tomorrow-Night-Bright
+"  adaryn
+"  af
+"  flatcolor
+colorscheme Tomorrow-Night        "  Sets the colorscheme
+syntax enable             "  Enables syntax highlighting
+"}}}
+
 
 " vim:foldmethod=marker:foldlevel=0
