@@ -114,7 +114,7 @@ hc set frame_border_width 1
 hc set always_show_frame 1
 hc set frame_bg_transparent 1
 hc set frame_transparent_width 5
-hc set frame_gap 4
+hc set frame_gap 20
 
 hc attr theme.active.color '#9fbc00'
 hc attr theme.normal.color '#1a1a1a'
@@ -156,3 +156,11 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
 hc detect_monitors
+
+panel=~/.config/polybar/launch_polybar.sh
+for monitor in $(herbsclient list_monitors | cut -d: -f1); do
+	hc pad $monitor 50
+done
+
+"$panel" &
+
