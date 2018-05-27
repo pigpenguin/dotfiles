@@ -62,4 +62,5 @@ urxvtd -q -f -o
 #esac
 
 exec herbstluftwm --lock
+exec compton -b
 
