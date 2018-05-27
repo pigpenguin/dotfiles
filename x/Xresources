@@ -32,6 +32,8 @@
 !!--urxvt-settings--!!
 URxvt.scrollBar: false
 URxvt.font:xft:code:size=10.5
+URxvt.depth: 32
+URxvt.background: [95]#1a1a1a
 
 !!--font-settings--!!
 Xft.autohint:  true
