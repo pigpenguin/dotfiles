@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+import fileinput
+from subprocess import Popen,PIPE
+
+update_commands = []
+
+def announce_update():
+    for command in update_commands:
+        Popen(command)
+
+def register_pid(pid):
+    update_commands.append(['polybar-msg',
+                            '-p',
+                            pid,
+                            'hook',
+                            'hlwm',
+                            '1'])
+if __name__=='__main__':
+    p = Popen(['pidof','polybar'],stdout=PIPE)
+    pids = p.communicate()[0].split()
+
+    for pid in pids:
+        register_pid(pid)
+
+    for line in fileinput.input():
+        print("tag status changed")
+        announce_update()

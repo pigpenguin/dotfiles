@@ -163,4 +163,6 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1); do
 done
 
 "$panel" &
+nitrogen --restore &
+hc -i tag | poly-hlwm-listen &
 
