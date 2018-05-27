@@ -158,7 +158,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 hc detect_monitors
 
 panel=~/.config/polybar/launch_polybar.sh
-for monitor in $(herbsclient list_monitors | cut -d: -f1); do
+for monitor in $(herbstclient list_monitors | cut -d: -f1); do
 	hc pad $monitor 50
 done
 
