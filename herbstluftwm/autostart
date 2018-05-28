@@ -164,5 +164,6 @@ done
 
 "$panel" &
 nitrogen --restore &
-hc -i tag | poly-hlwm-listen &
+compton -b
+
 
