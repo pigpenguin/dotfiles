@@ -11,4 +11,4 @@ for m in $(polybar -m | cut -d ":" -f1);do
 	MONITOR=$m polybar --reload example &
 done
 
-herbstclient -i tag | poly-hlwm-listen &
+nohup ~/.config/polybar/listen_hlwm.sh > ~/temporary 2>&1 &

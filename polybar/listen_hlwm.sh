@@ -1,3 +1,3 @@
 #!/bin/bash
 
-herbstclient -i tag | poly-hlwm-listen
+herbstclient -i tag | .config/scripts/poly-hlwm-listen
