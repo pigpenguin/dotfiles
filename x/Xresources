@@ -31,7 +31,7 @@
 
 !!--urxvt-settings--!!
 URxvt.scrollBar: false
-URxvt.font:xft:code:size=10.5
+URxvt*font: xft:Fantasque Sans Mono,xft:DejaVu Sans Mono
 URxvt.depth: 32
 URxvt.background: [95]#1a1a1a
 
