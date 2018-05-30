@@ -44,22 +44,5 @@ xbindkeys
 #Start up the urxvt daemon
 urxvtd -q -f -o
 
-# Select Window Manager
-#case $1 in
-#ratpoison)
-        #exec ratpoison
-        #;;
-#2bwm)
-        #exec 2bwm
-        #;;
-#musca)
-        #exec musca
-        #;;
-#herbs|*) 
-        #exec herbstluftwm -c ~/.herbstluftwm/autostart
-        #;;
-#
-#esac
-
 exec herbstluftwm --lock
 

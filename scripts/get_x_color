@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xrdb -query -all | grep *color$1: | cut -f2
