@@ -21,4 +21,4 @@ for i in ${!tag_names[@]} ; do
     fi
 done
 
-herbstclient chain $cmds&
+herbstclient chain $cmds

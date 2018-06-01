@@ -2,6 +2,8 @@
 
 # this is a simple config for herbstluftwm
 
+~/.screenlayout/dual_monitor.sh
+
 hc() {
 	cmds="$cmds , $@"
 }
@@ -14,9 +16,11 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 
 hc detect_monitors
 
-herbstclient chain $cmds&
-~/.config/herbstluftwm/scripts/rules
-~/.config/herbstluftwm/scripts/keybind
-~/.config/herbstluftwm/scripts/workspace
+~/.config/herbstluftwm/scripts/rules&
+~/.config/herbstluftwm/scripts/keybind&
+~/.config/herbstluftwm/scripts/workspace&
 ~/.config/herbstluftwm/scripts/theme
-~/.config/herbstluftwm/scripts/colors
+
+herbstclient chain $cmds&
+~/.config/scripts/update_wallpaper
+~/.config/herbstluftwm/polybar/panel.sh

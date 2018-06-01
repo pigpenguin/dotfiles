@@ -14,7 +14,7 @@ hc set frame_transparent_width 5
 hc set frame_gap 20
 
 hc attr theme.inner_width 1
-hc attr theme.border_width 3
+hc attr theme.border_width 5
 hc attr theme.floating.border_width 4
 hc attr theme.floating.outer_width 1
 
@@ -24,4 +24,9 @@ hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
-herbstclient chain $cmds&
+# padding
+for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+	hc pad $monitor 60
+done
+
+herbstclient chain $cmds
