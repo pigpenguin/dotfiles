@@ -1,0 +1,2 @@
+# Set the theme to match wal
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
