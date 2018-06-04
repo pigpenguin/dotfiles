@@ -1,6 +1,0 @@
-[submodule "vim/bundle/gundo"]
-	path = vim/bundle/gundo
-	url = git@github.com:sjl/gundo.vim.git
-[submodule "vim/bundle/colorschemes"]
-	path = vim/bundle/colorschemes
-	url = https://github.com/flazz/vim-colorschemes.git
