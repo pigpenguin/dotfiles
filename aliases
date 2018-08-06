@@ -1,2 +1,8 @@
+# Create parent directories as needed
 alias mkdir='mkdir -p'
+
+# Show colors when listing
 alias ls='ls --color'
+
+# Do not care about case when grepping
+alias grep='grep -i'
