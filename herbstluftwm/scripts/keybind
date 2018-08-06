@@ -17,6 +17,7 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn urxvt
 hc keybind $Mod-p spawn rofi -show run
+hc keybind $Mod-Shift-p spawn screenshot-selection
 
 # basic movement
 # focusing clients
