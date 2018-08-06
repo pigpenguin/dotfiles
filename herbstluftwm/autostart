@@ -16,9 +16,9 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 
 hc detect_monitors
 
-~/.config/herbstluftwm/scripts/rules&
-~/.config/herbstluftwm/scripts/keybind&
-~/.config/herbstluftwm/scripts/workspace&
+~/.config/herbstluftwm/scripts/rules
+~/.config/herbstluftwm/scripts/keybind
+~/.config/herbstluftwm/scripts/workspace
 ~/.config/herbstluftwm/scripts/theme
 
 herbstclient chain $cmds&
