@@ -42,7 +42,6 @@ xsetroot -solid "#282828"
 xbindkeys
 
 #Start up the urxvt daemon
-urxvtd -q -f -o
+urxvtd -vb -q -f -o
 
 exec herbstluftwm --lock
-

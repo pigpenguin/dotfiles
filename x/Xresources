@@ -31,9 +31,10 @@
 
 !!--urxvt-settings--!!
 URxvt.scrollBar: false
-URxvt*font: xft:Fantasque Sans Mono,xft:DejaVu Sans Mono
+URxvt*font: xft:Fantasque Sans Mono:pixelsize=24,xft:DejaVu Sans Mono:pixelsize=24
 URxvt.depth: 32
 URxvt.background: [95]#1a1a1a
+URxvt.perl-ext-common: font-size
 
 !!--font-settings--!!
 Xft.autohint:  true
