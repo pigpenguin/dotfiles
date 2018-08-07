@@ -22,5 +22,5 @@ hc detect_monitors
 ~/.config/herbstluftwm/scripts/theme
 
 herbstclient chain $cmds&
-~/.config/scripts/update_wallpaper
+set-wallpaper
 ~/.config/herbstluftwm/polybar/panel.sh

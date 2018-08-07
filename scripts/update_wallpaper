@@ -1,5 +1,0 @@
-#! /bin/bash
-
-nitrogen --restore
-wal -c -n -i ~/Images/Wallpapers/1 -a "95"
-~/.config/herbstluftwm/scripts/colors
