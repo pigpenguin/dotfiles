@@ -6,10 +6,27 @@ Hibernate
 Shutdown
 Reboot" | rofi -dmenu -lines 5 -width -20 -p ">>")
 
-if [ choice == "Hibernate" ]
-then
-	systemctl hibernate
-else
-	echo "$choice not understood"
-fi
+case "$choice" in
+	Hibernate)
+		systemctl hibernate
+		;;
 
+	Sleep)
+		systemctl suspend
+		;;
+
+	Shutdown)
+		poweroff
+		;;
+
+	Reboot)
+		reboot
+		;;
+
+	Lock)
+		echo "Locking not yet implemented"
+		;;
+
+	*)
+		echo "$choice not an option"
+esac
