@@ -33,4 +33,18 @@ listen to then tell polybar to update. The scripts responsible for all this are:
   * **herbstluftwm/scripts/panel** spawns the script which listens to hlwm and notifies polybar
   * **script/poly-hlwm-tags** is the script polybar calls upon update, it polls the hlwm tag status
   and produces a polybar formatted string
+  
+## Scripts ##
+A collection of homemade scripts to do whatever
+
+  * **get-x-color** reads the x database and spits out desired color
+  ***poly-hlwm-tags** generates tag data for polybar, probably shouldn't be 
+  here as it's only ever called by polybar and not by an end user.
+  * **power-menu** opens a rofi menu with power options. Currently can make the computer
+  sleep, hibernate, reboot, and power off. Will add locking soon, and maybe a confirmation
+  prompt?
+  * **set-wallpaper** sets the wallpaper on the specified monitor, generates a colorscheme
+  from it, then updates everything to use said colorscheme. Wallpaper setting done by 
+  [nitrogen](https://github.com/l3ib/nitrogen) for nice dual monitor support, 
+  color generation handled by [pywal](https://github.com/dylanaraps/pywal) cause it just works.
 
