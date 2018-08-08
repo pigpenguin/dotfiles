@@ -9,12 +9,11 @@
 
 # Colors
 # These should match, or at least complement, the colors
-# in ~/.config/polybar/config eventually I will come up
-# with a way to share the colors conveniently
+# in ~/.config/polybar/config currently they're dynamically set
+# so they will always match
 
-background_color="#222"
-foregound_color="#dfdfdf"
-underline_color="#fba922"
+background_color=$(get_x_background)
+underline_color=$(get_x_color 3)
 
 function foreground {
 	# $1 = color
