@@ -1,66 +1,59 @@
-#!/usr/bin/env python3
-import fileinput
-from subprocess import Popen,PIPE
+#!/bin/bash
 
-# Settings, these need to be set to match ~/.config/polybar/config
-# If you want them to look nice at all
+# This script gets the current tag status from hlwm and
+# renders it as a text string polybar can render
 
-#Colors
-background_color = "#222"
-foregound_color  = "#dfdfdf"
-underline_color  = "#fba922"
+############
+# Settings #
+############
 
-def foreground(color,message):
-    message = message.decode("utf-8")
-    output = "%{F"
-    output += (color)
-    output += ("} ")
-    output += (message)
-    output +=  "%{F-}"
-    
-    return output
+# Colors
+# These should match, or at least complement, the colors
+# in ~/.config/polybar/config eventually I will come up
+# with a way to share the colors conveniently
 
-def background(color,message):
-    message = message.decode("utf-8")
-    output = "%{B"
-    output += (color)
-    output += ("} ")
-    output += (message)
-    output +=  "%{B-}"
-    
-    return output
+background_color="#222"
+foregound_color="#dfdfdf"
+underline_color="#fba922"
 
-def underline(color,message):
-    message = message.decode("utf-8")
-    output = "%{u"
-    output += (color)
-    output += (" +u}")
-    output += (message)
-    output += ("%{-u}")
-    return output
+function foreground {
+	# $1 = color
+	# $2 = text
+	# Formats the text so polybar renders
+	# it with the provided color
+    echo "%{F$1}$2 %{F-}"
+}
 
-def get_status_format(status):
-    status = chr(status)
-    if status == '.':
-        return lambda message: foreground(background_color,message)
-    elif status == '#':
-        return lambda message: underline(underline_color,message)
-    else:
-        return lambda x: x.decode("utf-8")
+function underline {
+	# $1 = color
+	# $2 = text
+	# Formats the text so polybar renders
+	# it underlined with the provided color
+    echo "%{u$1 +u}$2 %{-u}"
+}
 
-def parse_tag(tag):
-    status = tag[0]
-    name = tag[1:]
-    formating = get_status_format(status)
-    return formating(name)
+function format {
+    # $1 = status
+    # $2 = tag
+	# Based on the status renders the tag accordingly
+    case $1 in
+        ".")
+            echo $(foreground $background_color $2)
+            ;;
+        "#")
+            echo $(underline $underline_color $2)
+            ;;
+        *)
+            echo "$2 "
+            ;;
+    esac
+}
 
-def get_tags():
-    p = Popen(['herbstclient', 'tag_status'],stdout=PIPE)
-    tags = p.communicate()[0].split()
-    return tags
+tags=$(herbstclient tag_status)
+output=" "
+for tag in $tags:
+           do
+               output+=" $(format ${tag:0:1} ${tag:1})"
+           done
 
-if __name__=='__main__':
-    output = " "
-    for tag in get_tags():
-        output += " " + parse_tag(tag)
-    print(output)
+echo "$output"
