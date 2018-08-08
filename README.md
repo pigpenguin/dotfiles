@@ -5,7 +5,7 @@ in the process of cleaning them up and commenting etc.
 
 ## Window Manager ##
 
-Currently the configured window manage is[herbstluftwm](https://herbstluftwm.org)
+Currently the configured window manage is [herbstluftwm](https://herbstluftwm.org)
 (which will be refered to as hlwm from now on) the config for that is divided 
 into a couple of pieces.
 
@@ -43,6 +43,8 @@ A collection of homemade scripts to do whatever
   * **power-menu** opens a rofi menu with power options. Currently can make the computer
   sleep, hibernate, reboot, and power off. Will add locking soon, and maybe a confirmation
   prompt?
+  * **screenshot-selection** using [maim](https://github.com/naelstrof/maim) takes a screenshot
+  of a user defined area and copies it to the clipboard for use.
   * **set-wallpaper** sets the wallpaper on the specified monitor, generates a colorscheme
   from it, then updates everything to use said colorscheme. Wallpaper setting done by 
   [nitrogen](https://github.com/l3ib/nitrogen) for nice dual monitor support, 
