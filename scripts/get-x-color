@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Reads the current x colors
+# As I'm generating these with wal, there may be a better way to do this
+
+case $1 in 
+	"background")
+		xrdb -query -all | grep "^*background" | cut -f2
+		;;
+	"foreground")
+		xrdb -query -all | grep "^*foreground" | cut -f2
+		;;
+	*)
+		xrdb -query -all | grep *color$1: | cut -f2
+		;;
+esac
