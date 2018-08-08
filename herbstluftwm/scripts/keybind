@@ -1,8 +1,6 @@
 #! /bin/bash
 
-# Sets hlwm's keybinds
-
-function hc {
+hc() {
 	cmds="$cmds , $@"
 }
 
@@ -91,4 +89,4 @@ hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
-echo $cmds
+herbstclient chain $cmds

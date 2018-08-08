@@ -38,7 +38,7 @@ listen to then tell polybar to update. The scripts responsible for all this are:
 A collection of homemade scripts to do whatever
 
   * **get-x-color** reads the x database and spits out desired color
-  ***poly-hlwm-tags** generates tag data for polybar, probably shouldn't be 
+  * **poly-hlwm-tags** generates tag data for polybar, probably shouldn't be 
   here as it's only ever called by polybar and not by an end user.
   * **power-menu** opens a rofi menu with power options. Currently can make the computer
   sleep, hibernate, reboot, and power off. Will add locking soon, and maybe a confirmation
