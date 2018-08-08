@@ -1,26 +1,45 @@
 #!/usr/bin/env bash
 
-# this is a simple config for herbstluftwm
+# Runs all of the necessary scripts to make hlwm tick
+# And some other stuff which may want to be moved?
 
+# Causes my monitors to be set up nice and proper
+# This maybe shouldn't be here. Also finding a better
+# way to do this than hardcoding would be nice
 ~/.screenlayout/dual_monitor.sh
 
-hc() {
+##############
+# hlwm stuff #
+##############
+
+function hc {
 	cmds="$cmds , $@"
 }
 
+# Tell the world we're reloading
 hc emit_hook reload
 
-hc unlock
+# Lock the monitors until we're done
+hc lock
 
 herbstclient set tree_style '╾│ ├└╼─┐'
 
 hc detect_monitors
 
-~/.config/herbstluftwm/scripts/rules
-~/.config/herbstluftwm/scripts/keybind
-~/.config/herbstluftwm/scripts/workspace
-~/.config/herbstluftwm/scripts/theme
+# Import all our other commands
+hc $(~/.config/herbstluftwm/scripts/rules)
+hc $(~/.config/herbstluftwm/scripts/keybind)
+hc $(~/.config/herbstluftwm/scripts/workspace)
+hc $(~/.config/herbstluftwm/scripts/theme)
 
+# Draw our new updates
+hc unlock
+
+# Push all these commands to the client
 herbstclient chain $cmds&
+
+# Configure our wallpaper/colors
 set-wallpaper
-~/.config/herbstluftwm/polybar/panel.sh
+
+# Start up our panel
+~/.config/herbstluftwm/scripts/panel

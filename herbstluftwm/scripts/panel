@@ -14,6 +14,9 @@ for m in $(polybar -m | cut -d ":" -f1);do
 	MONITOR=$m polybar --reload example &
 done
 
-# This probably shouldn't be here, I'll find a better home later
+# Everytime that herbstclient broadcasts a tag status change alert polybar
+# This probably shouldn't be here as this process will get spawned on 
+# every reload of hlwm and I don't have a good idea on how to kill it 
+# yet.
 herbstclient -i tag | awk '{system("polybar-msg hook hlwm 1")}' &
 

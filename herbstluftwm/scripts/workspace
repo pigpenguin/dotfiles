@@ -1,7 +1,6 @@
 #! /bin/bash
 
-
-hc() {
+function hc {
 	cmds="$cmds , $@"
 }
 
@@ -21,4 +20,4 @@ for i in ${!tag_names[@]} ; do
     fi
 done
 
-herbstclient chain $cmds
+echo $cmds
