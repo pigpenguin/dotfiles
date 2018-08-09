@@ -5,7 +5,7 @@ Sleep
 Hibernate
 Reboot
 Shutdown
-Quit" | rofi -dmenu -lines 5 -width -20 -p ">>")
+Quit" | rofi -dmenu -lines 6 -width -20 -p ">>")
 
 case "$choice" in
 	Hibernate)
