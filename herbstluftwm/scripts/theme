@@ -1,8 +1,6 @@
 #! /bin/bash
 
-# Defines padding and all that jazz
-
-function hc {
+hc() {
 	cmds="$cmds , $@"
 }
 
@@ -31,4 +29,4 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
 	hc pad $monitor 60
 done
 
-echo $cmds
+herbstclient chain $cmds

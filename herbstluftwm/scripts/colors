@@ -1,17 +1,13 @@
 #! /bin/bash
 
-# Reads in the x colors and sets hlwm to match
-
-function hc {
+hc() {
 	cmds="$cmds , $@"	
 }
 
 hc emit_hook recolor
 
-hc lock
-
-color3=$(get-x-color 3)
-color5=$(get-x-color 5)
+color3=$(get_x_color 3)
+color5=$(get_x_color 5)
 
 # theme
 hc set frame_border_active_color $color3
@@ -34,7 +30,5 @@ hc attr theme.active.inner_color $color5
 hc attr theme.active.outer_color '#c0ffee'
 
 hc attr theme.background_color '#141414'
-
-hc unlock
 
 herbstclient chain $cmds&
