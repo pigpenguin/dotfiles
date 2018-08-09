@@ -3,8 +3,9 @@
 choice=$(echo "Lock
 Sleep
 Hibernate
+Reboot
 Shutdown
-Reboot" | rofi -dmenu -lines 5 -width -20 -p ">>")
+Quit" | rofi -dmenu -lines 5 -width -20 -p ">>")
 
 case "$choice" in
 	Hibernate)
@@ -25,6 +26,9 @@ case "$choice" in
 
 	Lock)
 		echo "Locking not yet implemented"
+		;;
+	Quit)
+		herbstclient quit
 		;;
 
 	*)
