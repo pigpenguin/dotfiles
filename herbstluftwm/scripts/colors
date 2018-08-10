@@ -6,8 +6,8 @@ hc() {
 
 hc emit_hook recolor
 
-color3=$(get_x_color 3)
-color5=$(get_x_color 5)
+color3=$(get-x-color 3)
+color5=$(get-x-color 5)
 
 # theme
 hc set frame_border_active_color $color3
