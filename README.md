@@ -3,6 +3,13 @@
 Not much to say, these are just the config files for my machine. Currently
 in the process of cleaning them up and commenting etc.
 
+## Installation ##
+
+These files are meant to managed by stow. Simply clone the repo into your home
+directory, in a file like `.dotfiles` or something then for any of the configs
+you want to set up simply `stow folder`. So for instance if you wanted to 
+install the irssi config you would run `stow irssi`
+
 ## Window Manager ##
 
 Currently the configured window manage is [herbstluftwm](https://herbstluftwm.org)
