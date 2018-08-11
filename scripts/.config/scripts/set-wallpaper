@@ -30,32 +30,32 @@ case $# in
 		;;
 	1)
 		# If called with a single argument apply the supplied image to both monitors
-		if [ ! -f $1 ]
+		if [ ! -f "$1" ]
 		then
 			echo "$1 does not exist"
 			exit 1
 		fi
-		ln -f $1 "$directory/1"
-		ln -f $1 "$directory/2"
+		ln -f "$1" "$directory/1"
+		ln -f "$1" "$directory/2"
 		setWallpaper
 		exit 0
 		;;
 	2)
 		# If called with two arguments apply the supplied image ($2) to the supplied
 		# monitor ($1)
-		if [ ! -f $2 ]
+		if [ ! -f "$2" ]
 		then
 			echo "$2 does not exist"
 			exit 1
 		fi
 		case $1 in
 			1)
-				ln -f $2 "$directory/1"
+				ln -f "$2" "$directory/1"
 				setWallpaper
 				exit 0
 				;;
 			2)
-				ln -f $2 "$directory/2"
+				ln -f "$2" "$directory/2"
 				# As all the color schemes are based on monitor 1, only cause nitrogen
 				# to recheck
 				nitrogen --restore

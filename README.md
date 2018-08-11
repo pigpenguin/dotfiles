@@ -56,4 +56,5 @@ A collection of homemade scripts to do whatever
   from it, then updates everything to use said colorscheme. Wallpaper setting done by 
   [nitrogen](https://github.com/l3ib/nitrogen) for nice dual monitor support, 
   color generation handled by [pywal](https://github.com/dylanaraps/pywal) cause it just works.
-
+  * **spotlight** gets a random wallpaper from windows 10 spotlight then sets it as the current
+  wallpaper on both monitors. Mostly ripped from [Marius' project](https://gihub.com/mariusknaust/spotlight) 

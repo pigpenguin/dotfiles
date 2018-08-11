@@ -1,0 +1,31 @@
+#! /bin/bash
+
+# Downloads a random wallpaper from windows spotlight
+# Code copied verbatim from
+# https://github.com/mariusknaust/spotlight
+
+# Where to save the gotten images
+directory=$HOME/Images/spotlight
+
+mkdir -p "$directory"
+
+response=$(wget -qO- "https://arc.msn.com/v3/Delivery/Cache?pid=279978&fmt=json&ua=WindowsShellClient&lc=en,en-US&ctry=US")
+status=$?
+
+if [ $status -ne 0 ]
+then
+	systemd-cat -t spotlight -p emerg <<< "Query for $name failed"
+	exit $status
+fi
+
+item=$(jq -r ".batchrsp.items[0].item" <<< $response)
+title=$(jq -r ".ad.title_text.tx" <<< $item)
+
+landscapeUrl=$(jq -r ".ad.image_fullscreen_001_landscape.u" <<< $item)
+
+path="$directory/$title.jpg"
+
+wget -qO "$path" "$landscapeUrl"
+
+set-wallpaper "$path"
+
