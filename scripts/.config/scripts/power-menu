@@ -7,12 +7,19 @@ Reboot
 Shutdown
 Quit" | rofi -dmenu -lines 6 -width -20 -p ">>")
 
+function lock {
+	sflock -c '|'
+	sleep 3
+}
+
 case "$choice" in
 	Hibernate)
+		lock
 		systemctl hibernate
 		;;
 
 	Sleep)
+		lock
 		systemctl suspend
 		;;
 
@@ -25,7 +32,7 @@ case "$choice" in
 		;;
 
 	Lock)
-		echo "Locking not yet implemented"
+		lock
 		;;
 	Quit)
 		herbstclient quit

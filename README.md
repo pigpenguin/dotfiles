@@ -48,8 +48,9 @@ A collection of homemade scripts to do whatever
   * **poly-hlwm-tags** generates tag data for polybar, probably shouldn't be 
   here as it's only ever called by polybar and not by an end user.
   * **power-menu** opens a rofi menu with power options. Currently can make the computer
-  sleep, hibernate, reboot, and power off. Will add locking soon, and maybe a confirmation
-  prompt?
+  sleep, hibernate, reboot, lock, and power off. Uses systemd to handle sleeping and 
+  [sflock](https://github.com/benruijl/sflock) to handle screen locking. Might add a confirmation
+  prompt to poweroff/reboot in the near future.
   * **screenshot-selection** using [maim](https://github.com/naelstrof/maim) takes a screenshot
   of a user defined area and copies it to the clipboard for use.
   * **set-wallpaper** sets the wallpaper on the specified monitor, generates a colorscheme
@@ -58,3 +59,10 @@ A collection of homemade scripts to do whatever
   color generation handled by [pywal](https://github.com/dylanaraps/pywal) cause it just works.
   * **spotlight** gets a random wallpaper from windows 10 spotlight then sets it as the current
   wallpaper on both monitors. Mostly ripped from [Marius' project](https://gihub.com/mariusknaust/spotlight) 
+  
+## Wal ##
+[Pywal](https://github.com/dylanaraps/pywal) is the magic sauce that makes the color generation work.
+currently the only config here is a template which generates an emacs theme. It works well enough with
+the issue that the status bar looks like trash. I think I know how to fix it, but it involves learning
+some lisp. And the [Moe theme](https://github.com/kuanyui/moe-theme.el) is pretty great anyway.
+
