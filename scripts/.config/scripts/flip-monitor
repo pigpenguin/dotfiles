@@ -1,0 +1,15 @@
+#! /bin/bash
+
+state=$(xrandr | grep eDP1 | grep -o inverted | wc -l)
+
+case $state in
+	1)
+		xrandr -o inverted
+		;;
+	2)
+		xrandr -o normal
+		;;
+	*)
+		echo "???"
+		;;
+esac

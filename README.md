@@ -44,6 +44,8 @@ listen to then tell polybar to update. The scripts responsible for all this are:
 ## Scripts ##
 A collection of homemade scripts to do whatever
 
+  * **flip-monitor** reads the current state of the monitor, if it's inverted return to normal
+  if it's normal invert it. Useful for showing people things on the monitor/converting to tablet mode
   * **get-x-color** reads the x database and spits out desired color
   * **poly-hlwm-tags** generates tag data for polybar, probably shouldn't be 
   here as it's only ever called by polybar and not by an end user.
