@@ -12,32 +12,46 @@ function lock {
 	sleep 3
 }
 
+function confirm {
+    choice=$(echo "Yes
+No" | rofi -dmenu -lines 2 -width -20 -p "$1?")
+
+    case $choice in
+        Yes)
+            $2
+            ;;
+        *)
+            echo "Not going to $1"
+    esac
+}
+
 case "$choice" in
 	Hibernate)
-		lock
-		systemctl hibernate
-		;;
+      confirm
+		  lock
+		  systemctl hibernate
+		  ;;
 
 	Sleep)
-		lock
-		systemctl suspend
-		;;
+		  lock
+		  systemctl suspend
+		  ;;
 
 	Shutdown)
-		poweroff
-		;;
+		  confirm shutdown poweroff
+		  ;;
 
 	Reboot)
-		reboot
-		;;
+		  confirm reboot reboot
+		  ;;
 
 	Lock)
-		lock
-		;;
+      lock
+		  ;;
 	Quit)
-		herbstclient quit
-		;;
+		  herbstclient quit
+		  ;;
 
 	*)
-		echo "$choice not an option"
+		  echo "$choice not an option"
 esac

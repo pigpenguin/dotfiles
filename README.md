@@ -51,8 +51,7 @@ A collection of homemade scripts to do whatever
   here as it's only ever called by polybar and not by an end user.
   * **power-menu** opens a rofi menu with power options. Currently can make the computer
   sleep, hibernate, reboot, lock, and power off. Uses systemd to handle sleeping and 
-  [sflock](https://github.com/benruijl/sflock) to handle screen locking. Might add a confirmation
-  prompt to poweroff/reboot in the near future.
+  [sflock](https://github.com/benruijl/sflock) to handle screen locking.
   * **screenshot-selection** using [maim](https://github.com/naelstrof/maim) takes a screenshot
   of a user defined area and copies it to the clipboard for use.
   * **set-wallpaper** sets the wallpaper on the specified monitor, generates a colorscheme
