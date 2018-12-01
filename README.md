@@ -1,16 +1,13 @@
-# Dot Files #
-
-Not much to say, these are just the config files for my machine. Currently
-in the process of cleaning them up and commenting etc.
-
-## Installation ##
+Installation
+============
 
 These files are meant to managed by stow. Simply clone the repo into your home
 directory, in a file like `.dotfiles` or something then for any of the configs
 you want to set up simply `stow folder`. So for instance if you wanted to 
 install the irssi config you would run `stow irssi`
 
-## Window Manager ##
+Window Manager
+==============
 
 Currently the configured window manage is [herbstluftwm](https://herbstluftwm.org)
 (which will be refered to as hlwm from now on) the config for that is divided 
@@ -28,7 +25,8 @@ into a couple of pieces.
  Color is the only real script which needs to be seperate due to the dynamic wallpaper
  color generation I do.
  
-## Panel ##
+Panel
+=====
 
 The currently configured panel is [polybar](https://github.com/jaagr/polybar)
 the configuration is pretty standard with the one exception of the window manager
@@ -41,7 +39,9 @@ listen to then tell polybar to update. The scripts responsible for all this are:
   * **script/poly-hlwm-tags** is the script polybar calls upon update, it polls the hlwm tag status
   and produces a polybar formatted string
   
-## Scripts ##
+Scripts
+=======
+
 A collection of homemade scripts to do whatever
 
   * **flip-monitor** reads the current state of the monitor, if it's inverted return to normal
@@ -62,9 +62,11 @@ A collection of homemade scripts to do whatever
   * **spotlight** gets a random wallpaper from windows 10 spotlight then sets it as the current
   wallpaper on both monitors. Mostly ripped from [Marius' project](https://gihub.com/mariusknaust/spotlight) 
   
-## Wal ##
+Wal
+===
+
 [Pywal](https://github.com/dylanaraps/pywal) is the magic sauce that makes the color generation work.
-currently the only config here is a template which generates an emacs theme. It works well enough with
-the issue that the status bar looks like trash. I think I know how to fix it, but it involves learning
-some lisp. And the [Moe theme](https://github.com/kuanyui/moe-theme.el) is pretty great anyway.
+currently the only config here is a template which generates an emacs theme. It "works" but the color 
+schemes it generates are... atrocious. I just the [Moe theme](https://github.com/kuanyui/moe-theme.el) 
+it's pretty great.
 
