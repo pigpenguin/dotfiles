@@ -8,13 +8,15 @@ function setWallpaper {
 	# Tells nitrogen to apply the images currently linke in the wallpaper directory
 	nitrogen --restore
 
+	# Clear the wal cache
+	wal -c
+
 	# Generates a color scheme to match the wallpaper on the primary monitor
 	# -q : silent, no output
-	# -c : clear the old colorscheme
 	# -n : don't override the wallpaper, nitrogen handles that
 	# -i : the image to use as our source
 	# -a : transparency value
-	wal -q -c -n -i ~/Images/Wallpapers/1 -a "95"
+	wal -n -i ~/Images/Wallpapers/1 -a "95"
 
 	# Tells our window manager to read the new wal colors and apply them
 	~/.config/herbstluftwm/scripts/colors
