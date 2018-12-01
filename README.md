@@ -15,7 +15,7 @@ into a couple of pieces.
 
   * **autostart** script which is run on start/reloads of hlwm
   * **scripts/colors** reads the current x colors and sets hlwm to match
-  * **scripts/keybind** hlwm keybindings, currently maybe doing too much?
+  * **scripts/keybind** hlwm keybinding
   * **scripts/rules** defines hlwm's behavior with windows
   * **scripts/panel** starts up polybar and what not
   * **scripts/theme** defines the spacing and borders for hlwm

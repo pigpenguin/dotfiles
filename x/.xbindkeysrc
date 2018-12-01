@@ -17,3 +17,31 @@
 "/usr/bin/xbacklight -inc 10"
     m:0x0 + c:233
     XF86MonBrightnessUp
+
+
+# App launching
+
+# Takes a screenshot
+"screenshot-selection"
+    m:0x9 + c:33
+    Shift+Alt + p
+
+# Launch a terminal
+"urxvt"
+    m:0x8 + c:36
+    Alt + Return
+
+# App Launcher
+"rofi -show run"
+    m:0x8 + c:33
+    Alt + p
+
+# Window list
+"rofi -show window"
+    m:0x8 + c:25
+    Alt + w
+
+# Shutdown, reboot etc
+"power-menu"
+    m:0x8 + c:24
+    Alt + q
