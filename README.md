@@ -46,6 +46,8 @@ A collection of homemade scripts to do whatever
 
   * **flip-monitor** reads the current state of the monitor, if it's inverted return to normal
   if it's normal invert it. Useful for showing people things on the monitor/converting to tablet mode
+  * **formula** reads the user input as LaTeX code, renders the equation as a png and loads it into 
+  the clipboard for easy pasting into chat clients. Works through rofi for popup formula creation ^_^
   * **get-x-color** reads the x database and spits out desired color
   * **poly-hlwm-tags** generates tag data for polybar, probably shouldn't be 
   here as it's only ever called by polybar and not by an end user.

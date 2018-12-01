@@ -1,0 +1,19 @@
+#! /bin/bash
+
+# Takes the argument, renders it as an equation
+# copies the equation to the clipboard
+doc="\documentclass[border=1pt]{standalone}
+\usepackage{xcolor}
+\newenvironment{mymath}{$\displaystyle}{$}
+\begin{document}
+{\color{gray}
+ \begin{mymath}
+ $@
+ \end{mymath}
+}
+\end{document}"
+
+
+echo $doc | pdflatex --output-dir /tmp
+convert -density 300 /tmp/standalone.pdf -quality 90 png:- | xclip -selection clipboard -t image/png
+
