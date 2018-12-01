@@ -3,10 +3,12 @@
 # Takes the argument, renders it as an equation
 # copies the equation to the clipboard
 doc="\documentclass[border=1pt]{standalone}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \newenvironment{mymath}{$\displaystyle}{$}
 \begin{document}
-{\color{gray}
+{\color{PineGreen}
  \begin{mymath}
  $@
  \end{mymath}
