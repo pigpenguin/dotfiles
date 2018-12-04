@@ -19,6 +19,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 ;}}}
+
 [bar/example]
 ;{{{
 monitor = ${env:MONITOR:}
@@ -44,9 +45,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=15;1
+font-0 = FantasqueSansMono Nerd Font:style=Medium,Regular:size=18
 font-1 = unifont:fontformat=truetype:size=18:antialias=false;0
-font-2 = Wuncon Siji:pixelsize=48;1
+font-2 = Wuncon Siji:size=96;1
 
 modules-left = hlwm
 modules-center = 
@@ -60,6 +61,7 @@ cursor-scroll = ns-resize
 
 enable-ipc=true
 ;}}}
+
 [module/filesystem]
 ;{{{
 type = internal/fs
@@ -71,6 +73,7 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 ;}}}
+
 [module/mpd]
 ;{{{
 type = internal/mpd
@@ -85,6 +88,7 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 ;}}}
+
 [module/xbacklight]
 ;{{{
 type = internal/xbacklight
@@ -103,26 +107,29 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 ;}}}
+
 [module/backlight-acpi]
 ;{{{
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 ;}}}
+
 [module/cpu]
 ;{{{
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
 ;}}}
+
 [module/memory]
 ;{{{
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -150,6 +157,7 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 ;}}}
+
 [module/eth]
 ;{{{
 type = internal/network
@@ -167,6 +175,7 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 ;}}}
+
 [module/date]
 ;{{{
 type = internal/date
@@ -178,12 +187,13 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %date% %time%
 ;}}}
+
 [module/volume]
 ;{{{
 type = internal/alsa
@@ -213,6 +223,7 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 ;}}}
+
 [module/battery]
 ;{{{
 type = internal/battery
@@ -226,21 +237,28 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+;     
+
+ramp-capacity-0 =  
+ramp-capacity-1 =  
+ramp-capacity-2 =  
+ramp-capacity-3 =  
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 ;}}}
+
 [module/temperature]
 ;{{{
 type = internal/temperature
@@ -256,17 +274,22 @@ label = %temperature-f%
 label-warn = %temperature-f%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+; 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
 ramp-foreground = ${colors.foreground-alt}
 ;}}}
+
 [module/hlwm]
 ;{{{
 type=custom/ipc
 hook-0= ~/.config/scripts/poly-hlwm-tags
 initial=1
 ;}}}
+
 [settings]
 ;{{{
 screenchange-reload = true
@@ -275,12 +298,11 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 ;}}}
+
 [global/wm]
 ;{{{
 margin-top = 5
 margin-bottom = 5
 ;}}}
-
-
 
 ; vim:ft=dosini:foldmethod=marker:foldlevel=0
