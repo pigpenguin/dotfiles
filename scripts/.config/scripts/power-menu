@@ -1,11 +1,12 @@
 #!/bin/bash
 
 choice=$(echo "Lock
+Nap
 Sleep
 Hibernate
 Reboot
 Shutdown
-Quit" | rofi -dmenu -lines 6 -width -20 -p ">>")
+Quit" | rofi -dmenu -lines 7 -width -20 -p ">>")
 
 function lock {
 	sflock -c '|'
@@ -26,32 +27,34 @@ No" | rofi -dmenu -lines 2 -width -20 -p "$1?")
 }
 
 case "$choice" in
-	Hibernate)
-      confirm
-		  lock
-		  systemctl hibernate
-		  ;;
+    Nap)
+        sleep 1; xset dpms force off
+        ;;
+	  Hibernate)
+		    lock
+		    systemctl hibernate
+		    ;;
 
-	Sleep)
-		  lock
-		  systemctl suspend
-		  ;;
+	  Sleep)
+		    lock
+		    systemctl suspend
+		    ;;
 
-	Shutdown)
-		  confirm shutdown poweroff
-		  ;;
+	  Shutdown)
+		    confirm shutdown poweroff
+		    ;;
 
-	Reboot)
-		  confirm reboot reboot
-		  ;;
+	  Reboot)
+		    confirm reboot reboot
+		    ;;
 
-	Lock)
-      lock
-		  ;;
-	Quit)
-		  herbstclient quit
-		  ;;
+	  Lock)
+        lock
+		    ;;
+	  Quit)
+		    herbstclient quit
+		    ;;
 
-	*)
+	  *)
 		  echo "$choice not an option"
 esac
