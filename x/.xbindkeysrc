@@ -1,3 +1,14 @@
+#Notes
+#========================
+#To find key codes
+#> xbindkeys --key
+#> xbindkeys --multi-key
+#
+#To reload after editing
+#> xbindkeys --poll-rc
+#========================
+
+
 #Volume control
 
 "/usr/bin/amixer -q set Master toggle"
@@ -35,6 +46,11 @@
 "rofi -show run"
     m:0x8 + c:33
     Alt + p
+
+# Web Browser
+"surf-menu"
+	m:0x8 + c:56
+	Alt + b
 
 # Window list
 "rofi -show window"

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+choice=$(rofi -dmenu -lines 1 -width -80 -p "surf")
+
+surf $choice &
+
+
