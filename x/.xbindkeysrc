@@ -1,12 +1,15 @@
-#Notes
-#========================
-#To find key codes
-#> xbindkeys --key
-#> xbindkeys --multi-key
 #
-#To reload after editing
-#> xbindkeys --poll-rc
-#========================
+# ~/.xbindkeyssrc
+#
+#        Notes
+# ========================
+# To find key codes
+# > xbindkeys --key
+# > xbindkeys --multi-key
+#
+# To reload after editing
+# > xbindkeys --poll-rc
+# ========================
 
 
 #Volume control
@@ -38,7 +41,7 @@
     Shift+Alt + p
 
 # Launch a terminal
-"urxvt"
+"urxvt -e fish"
     m:0x8 + c:36
     Alt + Return
 
