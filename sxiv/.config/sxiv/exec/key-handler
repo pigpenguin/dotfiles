@@ -1,0 +1,10 @@
+#! /bin/bash
+while read file
+do
+	case "$1" in
+		"w") 
+			set-wallpaper "$file";;
+		"y")
+			convert "$file" PNG:- | xclip -selection clipboard -t image/png ;;
+	esac
+done
