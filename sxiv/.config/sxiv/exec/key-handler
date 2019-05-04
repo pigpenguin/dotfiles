@@ -1,10 +1,16 @@
 #! /bin/bash
+
+# Handles shortcuts in sxiv
+# $1 is the shortcut pressed, $file is the image
 while read file
 do
 	case "$1" in
 		"w") 
+			# Sets the wallpaper to this file
 			set-wallpaper "$file";;
 		"y")
+			# "Yank" the image to the clipboard for easy pasting
 			convert "$file" PNG:- | xclip -selection clipboard -t image/png ;;
 	esac
 done
+
