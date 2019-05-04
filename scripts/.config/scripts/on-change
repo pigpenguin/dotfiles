@@ -1,0 +1,5 @@
+#! /bin/bash
+
+# Small script to watch a file and do an action whenever the file changes.
+# Looked like there were more robust ways to do this. But this is working.
+while inotifywait -e close_write $1; do $2; done
