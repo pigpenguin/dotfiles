@@ -16,12 +16,13 @@ function setWallpaper {
 	# -n : don't override the wallpaper, nitrogen handles that
 	# -i : the image to use as our source
 	# -a : transparency value
-	wal -n -i ~/Images/Wallpapers/1 -a "95"
+	# -s : don't mess with the terminal
+	# -t : don't mess with the tty
+	wal -s -t -n -i ~/Images/Wallpapers/1 -a "95"
 
 	# Tells our window manager to read the new wal colors and apply them
 	~/.config/herbstluftwm/scripts/colors
 }
-
 
 case $# in
 	0)
