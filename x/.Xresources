@@ -2,32 +2,43 @@
 !!  Digital Love  !!
 !! Made by phyrne !! 
 !!----------------!!
-! *background: #1a1a1a
-! *foreground: #808080
+
+! Special
+! *background:  #1a1a1a
+! *foreground:  #808080
+! *cursorcolor: #808080
+!
 ! !Black
-! *color0:     #1a1a1a
-! *color8:     #404040
+! *color0:      #1a1a1a
+! *color8:      #404040
+!
 ! !Red
-! *color1:     #f4343f
-! *color9:     #ff5756
+! *color1:      #f4343f
+! *color9:      #ff5756
+!
 ! !Green
-! *color2:     #a0eb3e
-! *color10:    #b2ff5e
+! *color2:      #a0eb3e
+! *color10:     #b2ff5e
+!
 ! !Yellow
-! *color3:     #ffa446
-! *color11:    #f5be58
+! *color3:      #ffa446
+! *color11:     #f5be58
+!
 ! !Blue
-! *color4:     #30c4c9
-! *color12:    #69d2e7
+! *color4:      #30c4c9
+! *color12:     #69d2e7
+!
 ! !Magenta
-! *color5:     #ff9e9d
-! *color13:    #ffd8d8
+! *color5:      #ff9e9d
+! *color13:     #ffd8d8
+!
 ! !Cyan
-! *color6:     #4ecdc4
-! *color14:    #c8faff
+! *color6:      #4ecdc4
+! *color14:     #c8faff
+!
 ! !White
-! *color7:     #fef8d8
-! *color15:    #756160
+! *color7:      #fef8d8
+! *color15:     #756160
 
 
 !!----------------------!!
@@ -72,6 +83,7 @@
 *.color7:       #9e9e9e
 *.color15:      #5f5f5f
 
+!!--st-settings--!!
 st.alpha: 240
 
 !!--font-settings--!!
