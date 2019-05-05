@@ -74,13 +74,6 @@
 
 st.alpha: 240
 
-
-!!--urxvt-settings--!!
-URxvt.scrollBar: false
-URxvt.font: xft:FantasqueSansMono Nerd Font Mono:pixelsize=24
-URxvt.depth: 32
-URxvt.perl-ext-common: font-size
-
 !!--font-settings--!!
 Xft.autohint:  true
 Xft.antialias: true

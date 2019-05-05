@@ -9,7 +9,7 @@
 #
 # To reload after editing
 # > xbindkeys --poll-rc
-# ========================
+#========================
 
 
 #Volume control
@@ -41,7 +41,7 @@
     Shift+Alt + p
 
 # Launch a terminal
-"urxvt -e fish"
+"st -e fish"
     m:0x8 + c:36
     Alt + Return
 
