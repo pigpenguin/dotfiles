@@ -21,10 +21,10 @@ alert = ${xrdb:color9:#bd2c40}
 ;{{{
 monitor = ${env:MONITOR:}
 width = 75%
-height = 50
+height = 60
 offset-x = 12.5%
-;offset-y = 1%
-radius = 6.0
+offset-y = 6
+;radius = 6.0
 fixed-center = true
 
 background = ${colors.background}
@@ -33,10 +33,10 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 10
+border-size = 0
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
@@ -46,9 +46,9 @@ font-0 = FantasqueSansMono Nerd Font:style=Medium,Regular:size=18
 font-1 = unifont:fontformat=truetype:size=18:antialias=false;0
 font-2 = Wuncon Siji:size=96;1
 
-modules-left = hlwm
-modules-center = 
-modules-right =  backlight-acpi volume  memory cpu battery temperature date
+modules-left = backlight-acpi volume  
+modules-center = hlwm
+modules-right =  memory cpu battery temperature date
 
 tray-position = right
 tray-padding = 2
