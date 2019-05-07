@@ -20,6 +20,7 @@ hc detect_monitors
 ~/.config/herbstluftwm/scripts/keybind
 ~/.config/herbstluftwm/scripts/workspace
 ~/.config/herbstluftwm/scripts/theme
+~/.config/herbstluftwm/scripts/colors
 
 herbstclient chain $cmds&
 set-wallpaper
