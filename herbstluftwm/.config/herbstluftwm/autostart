@@ -3,6 +3,7 @@
 # this is a simple config for herbstluftwm
 
 ~/.screenlayout/dual_monitor.sh
+wal -s -t -n -l --theme moe
 
 hc() {
 	cmds="$cmds , $@"
@@ -20,8 +21,8 @@ hc detect_monitors
 ~/.config/herbstluftwm/scripts/keybind
 ~/.config/herbstluftwm/scripts/workspace
 ~/.config/herbstluftwm/scripts/theme
-~/.config/herbstluftwm/scripts/colors
 
 herbstclient chain $cmds&
-set-wallpaper
+# set-wallpaper
+~/.config/herbstluftwm/scripts/colors
 ~/.config/herbstluftwm/polybar/panel.sh
