@@ -36,7 +36,8 @@ fi
 
 
 # Set background
-xsetroot -solid "#282828"
+set-wallpaper
+# xsetroot -solid "#282828"
 
 #Create keybindings
 xbindkeys
@@ -45,3 +46,4 @@ xbindkeys
 urxvtd -vb -q -f -o
 
 exec herbstluftwm --lock
+

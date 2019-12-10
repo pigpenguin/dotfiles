@@ -41,12 +41,12 @@
     Shift+Alt + p
 
 # Launch a terminal
-"st -e fish"
+"termite"
     m:0x8 + c:36
     Alt + Return
 
 # App Launcher
-"rofi -show run"
+"rofi -show drun -modi drun"
     m:0x8 + c:33
     Alt + p
 
