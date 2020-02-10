@@ -9,8 +9,10 @@
 
 [colors]
 ;{{{
-background = ${xrdb:background:#222}
-foreground = ${xrdb:foreground:#222}
+background = #000
+;background = ${xrdb:background:#222}
+foreground = #fff
+;foreground = ${xrdb:foreground:#222}
 foreground-alt = #555
 primary = ${xrdb:color4:#ffb52a}
 secondary = ${xrdb:color2:#e60053}
@@ -20,10 +22,10 @@ alert = ${xrdb:color9:#bd2c40}
 [bar/example]
 ;{{{
 monitor = ${env:MONITOR:}
-width = 75%
+width = 100%
 height = 60
-offset-x = 12.5%
-offset-y = 6
+offset-x = 0%
+offset-y = 0
 ;radius = 6.0
 fixed-center = true
 
@@ -46,7 +48,8 @@ font-0 = FantasqueSansMono Nerd Font:style=Medium,Regular:size=18
 font-1 = unifont:fontformat=truetype:size=18:antialias=false;0
 font-2 = Wuncon Siji:size=96;1
 
-modules-left = backlight-acpi volume  
+;modules-left = backlight-acpi volume  
+module-left =
 modules-center = hlwm
 modules-right =  memory cpu battery temperature date
 
@@ -118,7 +121,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = #000
 label = %percentage:2%%
 ;}}}
 
@@ -128,7 +131,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #000
 label = %percentage_used%%
 ;}}}
 
@@ -187,7 +190,7 @@ time-alt = %H:%M:%S
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #000
 
 label = %date% %time%
 ;}}}
@@ -264,7 +267,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = #000
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 

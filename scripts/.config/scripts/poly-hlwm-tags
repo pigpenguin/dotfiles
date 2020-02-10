@@ -12,15 +12,15 @@
 # in ~/.config/polybar/config currently they're dynamically set
 # so they will always match
 
-background_color=$(get-x-color background)
-underline_color=$(get-x-color 3)
+background_color=#000
+underline_color=#fff
 
 function foreground {
 	# $1 = color
 	# $2 = text
 	# Formats the text so polybar renders
 	# it with the provided color
-    echo "%{F$1}$2 %{F-}"
+    echo "%{F$1} $2 %{F-}"
 }
 
 function underline {
@@ -28,7 +28,7 @@ function underline {
 	# $2 = text
 	# Formats the text so polybar renders
 	# it underlined with the provided color
-    echo "%{u$1 +u}$2 %{-u}"
+    echo "%{u$1 +u} $2 %{-u}"
 }
 
 function format {
@@ -43,7 +43,7 @@ function format {
             echo $(underline $underline_color $2)
             ;;
         *)
-            echo "$2 "
+            echo " $2 "
             ;;
     esac
 }
