@@ -8,7 +8,7 @@ PATH=$PATH:$HOME/scripts:$HOME/.config/scripts:$HOME/.local/bin
 [[ $- != *i* ]] && return
 
 # Import wals colorscheme
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Create parent directories as needed
 alias mkdir='mkdir -p'
@@ -32,5 +32,5 @@ if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/corvid/.sdkman"
-[[ -s "/home/corvid/.sdkman/bin/sdkman-init.sh" ]] && source "/home/corvid/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/home/corvid/.sdkman"
+#[[ -s "/home/corvid/.sdkman/bin/sdkman-init.sh" ]] && source "/home/corvid/.sdkman/bin/sdkman-init.sh"
