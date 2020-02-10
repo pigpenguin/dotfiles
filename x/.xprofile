@@ -1,3 +1,11 @@
+# Get some nice scripts on the path
 export PATH="/home/corvid/.config/scripts:$PATH"
+
+# Restore our wallpaper
 set-wallpaper
+
+# Start up the compositor
+picom -b
+
+# Bind our keys
 xbindkeys
