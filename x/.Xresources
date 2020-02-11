@@ -91,5 +91,5 @@ Xft.autohint:  true
 Xft.antialias: true
 Xft.hinting:   true
 Xft.hintstyle: hintslight
-Xft.dpi:       150
+!!Xft.dpi:       150
 Xft.lcdfilter: lcddefault
