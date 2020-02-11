@@ -4,6 +4,10 @@
 
 PATH=$PATH:$HOME/scripts:$HOME/.config/scripts:$HOME/.local/bin
 
+if [ -d $HOME/.config/texmf ] ; then
+	export TEXMFHOME=$HOME/.config/texmf
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
