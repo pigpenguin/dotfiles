@@ -9,7 +9,7 @@
 
 [colors]
 ;{{{
-background = #000
+background = #00000
 ;background = ${xrdb:background:#222}
 foreground = #fff
 ;foreground = ${xrdb:foreground:#222}
@@ -24,7 +24,7 @@ alert = ${xrdb:color9:#bd2c40}
 monitor = ${env:MONITOR:}
 width = 100%
 height = 60
-offset-x = 0%
+offset-x = 0
 offset-y = 0
 ;radius = 6.0
 fixed-center = true
@@ -36,7 +36,7 @@ line-size = 3
 line-color = #f00
 
 border-size = 0
-border-color = #00000000
+border-color = #00000
 
 padding-left = 2
 padding-right = 2
@@ -49,8 +49,8 @@ font-1 = unifont:fontformat=truetype:size=18:antialias=false;0
 font-2 = Wuncon Siji:size=96;1
 
 ;modules-left = backlight-acpi volume  
-module-left =
-modules-center = hlwm
+modules-left = hlwm
+modules-center = 
 modules-right =  memory cpu battery temperature date
 
 tray-position = right
