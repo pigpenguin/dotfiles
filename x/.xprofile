@@ -9,3 +9,6 @@ picom -b
 
 # Bind our keys
 xbindkeys
+
+# Start the screen locker
+light-locker &
