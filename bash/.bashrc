@@ -24,6 +24,11 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
 
+# Diff properly please
+# -b ignore changes to whitespace
+# -B ignore new blank lines
+alias diff='diff -b -B'
+
 function _update_ps1() {
 	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
 }
