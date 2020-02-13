@@ -13,11 +13,19 @@ alias mkdir='mkdir -p'
 # Show colors when listing
 alias ls='ls --color'
 
-# Do not care about case when grepping
-alias grep='grep -i'
+# Grep should be colorfull and case insensitive
+alias grep='grep --color=auto -i'
+
+# Highlight diff output
+alias diff='colordiff'
+
+# Ask me before overwriting things
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
 
 function _update_ps1() {
-	  eval "$($GOPATH/bin/powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
+	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
