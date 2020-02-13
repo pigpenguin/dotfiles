@@ -16,18 +16,16 @@ alias ls='ls --color'
 # Grep should be colorfull and case insensitive
 alias grep='grep --color=auto -i'
 
-# Highlight diff output
-alias diff='colordiff'
-
 # Ask me before overwriting things
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
 
 # Diff properly please
+# colordiff colors output
 # -b ignore changes to whitespace
 # -B ignore new blank lines
-alias diff='diff -b -B'
+alias diff='colordiff -b -B'
 
 function _update_ps1() {
 	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
