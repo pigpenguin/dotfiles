@@ -41,7 +41,7 @@
     Shift+Alt + p
 
 # Launch a terminal
-"termite"
+"kitty"
     m:0x8 + c:36
     Alt + Return
 
