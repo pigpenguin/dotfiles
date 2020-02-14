@@ -5,7 +5,7 @@
 # ========================
 # To find key codes
 # > xbindkeys --key
-# > xbindkeys --multi-key
+# > xbindkeys --multikey
 #
 # To reload after editing
 # > xbindkeys --poll-rc
@@ -45,13 +45,18 @@
     m:0x8 + c:36
     Alt + Return
 
+# Launch Emacs
+"emacs"
+	m:0x8 + c:26
+	Alt+e
+
 # App Launcher
 "rofi -show drun -modi drun"
     m:0x8 + c:33
     Alt + p
 
 # Web Browser
-"surf-menu"
+"brave"
 	m:0x8 + c:56
 	Alt + b
 
