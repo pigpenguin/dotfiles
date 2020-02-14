@@ -59,8 +59,8 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     (extra-langs :variables
-                  matlab-mode)
+     ;; (extra-langs :variables
+     ;;              matlab-mode)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -349,13 +349,77 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-command-list
+   (quote
+    (("LatexMk" "latexmk %(-xetex)%S%(mode) %(file-line-error) %(extraopts) %t" TeX-run-latexmk nil
+      (plain-tex-mode latex-mode doctex-mode)
+      :help "Run LatexMk")
+     ("TeX" "%(PDF)%(tex) %(file-line-error) %`%(extraopts) %S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
+      (plain-tex-mode texinfo-mode ams-tex-mode)
+      :help "Run plain TeX")
+     ("LaTeX" "%`%l%(mode)%' %T" TeX-run-TeX nil
+      (latex-mode doctex-mode)
+      :help "Run LaTeX")
+     ("Makeinfo" "makeinfo %(extraopts) %t" TeX-run-compile nil
+      (texinfo-mode)
+      :help "Run Makeinfo with Info output")
+     ("Makeinfo HTML" "makeinfo %(extraopts) --html %t" TeX-run-compile nil
+      (texinfo-mode)
+      :help "Run Makeinfo with HTML output")
+     ("AmSTeX" "amstex %(PDFout) %`%(extraopts) %S%(mode)%' %t" TeX-run-TeX nil
+      (ams-tex-mode)
+      :help "Run AMSTeX")
+     ("ConTeXt" "%(cntxcom) --once --texutil %(extraopts) %(execopts)%t" TeX-run-TeX nil
+      (context-mode)
+      :help "Run ConTeXt once")
+     ("ConTeXt Full" "%(cntxcom) %(extraopts) %(execopts)%t" TeX-run-TeX nil
+      (context-mode)
+      :help "Run ConTeXt until completion")
+     ("BibTeX" "%(bibtex) %s" TeX-run-BibTeX nil
+      (plain-tex-mode latex-mode doctex-mode context-mode texinfo-mode ams-tex-mode)
+      :help "Run BibTeX")
+     ("Biber" "biber %s" TeX-run-Biber nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run Biber")
+     ("View" "%V" TeX-run-discard-or-function t t :help "Run Viewer")
+     ("Print" "%p" TeX-run-command t t :help "Print the file")
+     ("Queue" "%q" TeX-run-background nil t :help "View the printer queue" :visible TeX-queue-command)
+     ("File" "%(o?)dvips %d -o %f " TeX-run-dvips t
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Generate PostScript file")
+     ("Dvips" "%(o?)dvips %d -o %f " TeX-run-dvips nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Convert DVI file to PostScript")
+     ("Dvipdfmx" "dvipdfmx %d" TeX-run-dvipdfmx nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Convert DVI file to PDF with dvipdfmx")
+     ("Ps2pdf" "ps2pdf %f" TeX-run-ps2pdf nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Convert PostScript file to PDF")
+     ("Glossaries" "makeglossaries %s" TeX-run-command nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run makeglossaries to create glossary
+     file")
+     ("Index" "%(makeindex) %s" TeX-run-index nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run makeindex to create index file")
+     ("upMendex" "upmendex %s" TeX-run-index t
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run upmendex to create index file")
+     ("Xindy" "texindy %s" TeX-run-command nil
+      (plain-tex-mode latex-mode doctex-mode texinfo-mode ams-tex-mode)
+      :help "Run xindy to create index file")
+     ("Check" "lacheck %s" TeX-run-compile nil
+      (latex-mode)
+      :help "Check LaTeX file for correctness")
+     ("ChkTeX" "chktex -v6 %s" TeX-run-compile nil
+      (latex-mode)
+      :help "Check LaTeX file for common mistakes")
+     ("Spell" "(TeX-ispell-document \"\")" TeX-run-function nil t :help "Spell-check the document")
+     ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
+     ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
+     ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
     (ess lv transient moe-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot thrift stan-mode scad-mode qml-mode matlab-mode julia-mode arduino-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help nix-mode csv-mode vimish-fold evil-vimish-fold reformatter csharp-mode elm-mode processing-mode toml-mode racer pos-tip cargo rust-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode omnisharp base16-theme smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit ghub with-editor yaml-mode intero flycheck hlint-refactor hindent helm-hoogle haskell-snippets company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-statistics company-auctex company-anaconda company auto-yasnippet yasnippet auctex-latexmk auctex ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode mmm-mode markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "FantasqueSansMono Nerd Font" :foundry "PfEd" :slant normal :weight normal :height 120 :width normal)))))
