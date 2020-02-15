@@ -32,7 +32,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      csv
-     javascript
+     ;; javascript
      elm
      rust
      haskell
@@ -59,8 +59,8 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     (extra-langs :variables
-                  matlab-mode)
+     ;; (extra-langs :variables
+     ;;              matlab-mode)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -336,7 +336,7 @@ you should place your code here."
   ;; (evil-vimish-fold-mode 1)
   ;; Julia Babel stuff
   ;; (require 'ess-site)
-  (load-file "/home/corvid/.config/emacs/ob-julia.el")
+  ;; (load-file "/home/corvid/.config/emacs/ob-julia.el")
   (org-babel-do-load-languages
    'org-babel-do-load-languages
    '((julia . t)))
