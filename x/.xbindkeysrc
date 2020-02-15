@@ -52,8 +52,13 @@
 
 # Web Browser
 "brave"
-	m:0x8 + c:56
-	Alt + b
+    m:0x8 + c:56
+    Alt + b
+
+# Editor
+"emacs"
+    m:0x8 + c:26
+    ALT + e
 
 # Window list
 "rofi -show window"
