@@ -27,7 +27,7 @@ function _update_ps1() {
     # eval "$($GOPATH/bin/powerline-go -error $? -eval -modules-right git)"
 }
 
-if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "eterm-color" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
