@@ -7,30 +7,31 @@ PATH=$PATH:$HOME/scripts:$HOME/.config/scripts:$HOME/.local/bin
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Import wals colorscheme
-(cat ~/.cache/wal/sequences &)
-
 # Create parent directories as needed
 alias mkdir='mkdir -p'
 
 # Show colors when listing
 alias ls='ls --color'
 
-# Do not care about case when grepping
-alias grep='grep -i'
+# Grep should be colorfull and case insensitive
+alias grep='grep --color=auto -i'
 
-#PS1='[\u@\h \W]\$ '
+# Ask me before overwriting things
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
 
+# Diff properly please
+# colordiff colors output
+# -b ignore changes to whitespace
+# -B ignore new blank lines
+alias diff='colordiff -b -B'
 
 function _update_ps1() {
-	  eval "$($GOPATH/bin/powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
-    # eval "$($GOPATH/bin/powerline-go -error $? -eval -modules-right git)"
+	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
 }
 
-if [ "$TERM" != "linux" ] && [ "$TERM" != "eterm-color" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+if [ "$TERM" != "linux" ] && [ "$TERM" != "eterm-color" ] && [ -f "/usr/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/corvid/.sdkman"
-[[ -s "/home/corvid/.sdkman/bin/sdkman-init.sh" ]] && source "/home/corvid/.sdkman/bin/sdkman-init.sh"
