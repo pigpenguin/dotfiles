@@ -1,0 +1,17 @@
+#! /bin/bash
+
+case $# in
+	0)
+		# Don't know where you want me to save this.
+		echo "Usage: record-talk output-file"
+		exit 1
+		;;
+	1)
+		break
+		;;
+	*)
+		echo "Usage: record-talk output-file"
+		exit 1
+		;;
+esac
+ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -ac 2 -i default $1
