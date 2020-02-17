@@ -32,7 +32,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      csv
-     javascript
+     ;; javascript
      elm
      rust
      haskell
@@ -149,7 +149,7 @@ values."
                                :size 12.0
                                :weight normal
                                :width normal
-                               :powerline-scale 1.2)
+                               :powerline-scale 2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -336,7 +336,7 @@ you should place your code here."
   ;; (evil-vimish-fold-mode 1)
   ;; Julia Babel stuff
   ;; (require 'ess-site)
-  (load-file "/home/corvid/.config/emacs/ob-julia.el")
+  ;; (load-file "/home/corvid/.config/emacs/ob-julia.el")
   (org-babel-do-load-languages
    'org-babel-do-load-languages
    '((julia . t)))
