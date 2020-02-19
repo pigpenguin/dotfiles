@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ;; nlinum
      csv
      ;; javascript
      elm
@@ -149,7 +150,7 @@ values."
                                :size 12.0
                                :weight normal
                                :width normal
-                               :powerline-scale 2)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -272,10 +273,10 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 'relative
+   ;; dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
-   dotspacemacs-folding-method 'evil
+   dotspacemacs-folding-method 'origami
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -324,8 +325,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   ;; Compile latex preview on every render
-  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-  (add-hook 'LaTeX-mode-hook #'outline-minor-mode)
+  ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  ;; (add-hook 'LaTeX-mode-hook #'outline-minor-mode)
   ;; No idea why these are causing errors now.
   ;; TODO Re-add better tex folding or work out a better workflow
   ;; (add-to-list 'TeX-outline-extra '("\\\\subquestion" 5))
@@ -337,9 +338,12 @@ you should place your code here."
   ;; Julia Babel stuff
   ;; (require 'ess-site)
   ;; (load-file "/home/corvid/.config/emacs/ob-julia.el")
-  (org-babel-do-load-languages
-   'org-babel-do-load-languages
-   '((julia . t)))
+  ;; (org-babel-do-load-languages
+   ;; 'org-babel-do-load-languages
+   ;; '((julia . t)))
+  ;; Make linums relative by default
+  (linum-relative-global-mode)
+  (setq linum-relative-backend 'display-line-numbers-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -422,4 +426,4 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (ess lv transient moe-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot thrift stan-mode scad-mode qml-mode matlab-mode julia-mode arduino-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help nix-mode csv-mode vimish-fold evil-vimish-fold reformatter csharp-mode elm-mode processing-mode toml-mode racer pos-tip cargo rust-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode omnisharp base16-theme smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit ghub with-editor yaml-mode intero flycheck hlint-refactor hindent helm-hoogle haskell-snippets company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-statistics company-auctex company-anaconda company auto-yasnippet yasnippet auctex-latexmk auctex ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode mmm-mode markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (linum-relative linum origami ess lv transient moe-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot thrift stan-mode scad-mode qml-mode matlab-mode julia-mode arduino-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help nix-mode csv-mode vimish-fold evil-vimish-fold reformatter csharp-mode elm-mode processing-mode toml-mode racer pos-tip cargo rust-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern tern coffee-mode omnisharp base16-theme smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit ghub with-editor yaml-mode intero flycheck hlint-refactor hindent helm-hoogle haskell-snippets company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-statistics company-auctex company-anaconda company auto-yasnippet yasnippet auctex-latexmk auctex ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode mmm-mode markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))

@@ -1,0 +1,13 @@
+#! /bin/bash
+
+name="Pomodoro"
+urgency="critical"
+
+case "$1" in
+    work)
+        sleep 1500 && notify-send --app-name="$name" --urgency="$urgency" "Break!" "Get up, stretch, walk around, reflect"
+        ;;
+    break)
+	sleep 300  && notify-send --app-name="$name" --urgency="$urgency" "Back to work!"
+	;;
+esac
