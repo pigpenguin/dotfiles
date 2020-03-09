@@ -60,6 +60,12 @@
 	m:0x8 + c:56
 	Alt + b
 
+
+# Emoji picker
+"rofi -show emoji -modi emoji"
+    m:0x8 + c:62
+    Shift+Alt + Shift_R
+
 # Window list
 "rofi -show window"
     m:0x8 + c:25

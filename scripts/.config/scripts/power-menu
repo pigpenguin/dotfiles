@@ -5,12 +5,14 @@ Nap
 Sleep
 Hibernate
 Reboot
+Reboot-Menu
 Shutdown
-Quit" | rofi -dmenu -lines 7 -width -20 -p ">>")
+Quit" | rofi -dmenu -lines 8 -width -20 -p ">>")
 
 function lock {
-	sflock -c '|'
-	sleep 3
+	light-locker-command -l
+	#sflock -c '|'
+	#sleep 3
 }
 
 function confirm {
@@ -48,8 +50,11 @@ case "$choice" in
 		    confirm reboot reboot
 		    ;;
 
+          Reboot-Menu)
+		    confirm reboot "systemctl reboot --boot-loader-menu=10"
+		    ;;
 	  Lock)
-        lock
+        	    lock
 		    ;;
 	  Quit)
 		    herbstclient quit
