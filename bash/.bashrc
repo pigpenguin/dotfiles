@@ -39,3 +39,7 @@ if [ "$TERM" != "linux" ] && [ -f "/usr/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ];
+then
+	. $HOME/.nix-profile/etc/profile.d/nix.sh;
+fi
