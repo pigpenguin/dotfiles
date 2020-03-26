@@ -13,3 +13,10 @@ if [ -d $HOME/.config/texmf ]
 then
 	export TEXMFHOME=$HOME/.config/texmf
 fi
+
+# This probably should be removed.
+export PYEV_ROOT=$(pyenv root)
+
+# Configure the monitors
+sleep 3
+$HOME/.screenlayout/layout.sh
