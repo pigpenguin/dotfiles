@@ -2,8 +2,10 @@
 
 # this is a simple config for herbstluftwm
 
-~/.screenlayout/dual_monitor.sh
-wal -s -t -n -l --theme moe
+~/.screenlayout/layout.sh
+
+# Not currently using wal
+#wal -s -t -n -l --theme moe
 
 hc() {
 	cmds="$cmds , $@"
@@ -26,3 +28,4 @@ herbstclient chain $cmds&
 # set-wallpaper
 ~/.config/herbstluftwm/scripts/colors
 ~/.config/herbstluftwm/polybar/panel.sh
+~/.config/herbstluftwm/polybar/listen.sh &
