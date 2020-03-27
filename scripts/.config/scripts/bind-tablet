@@ -1,0 +1,79 @@
+#! /bin/sh
+
+name="HID 256c:006d Pen Pen (0)"
+
+# Left
+# HDMI-0
+# 1080 wide
+# 1920 tall
+# Portrait
+# First we want to rotate the input device by 90 degrees using
+# [0 -1 1]
+# [1  0 0]
+# [0  0 1]
+#
+# Then apply the matrix to bind
+# [ 1080/(1080 + 2560)  0  0 ]
+# [ 0                   1  0 ]
+# [ 0                   0  1 ]
+#
+# Resulting in
+# [ 0  -1080/(1080 + 2560) 1080/(1080 + 2560) ]
+# [ 1  0                   0                  ]
+# [ 0  0                   1                  ]
+
+
+# Right
+# DP-2
+# 2560 wide
+# 1440 tall
+# Standard
+# [ 2560/(1080 + 2560) 0          1080/(1080 + 2560) ]
+# [0                   1440/1920  0                  ]
+# [0                   0          1                  ]
+
+bind_left()
+{
+	xinput set-prop "$name" --type=float "Coordinate Transformation Matrix" 0 -0.2967 0.2967 1 0 0 0 0 1
+}
+
+bind_right()
+{
+	xinput set-prop "$name" --type=float "Coordinate Transformation Matrix" 0.70329 0 0.2967 0 0.75 0 0 0 1
+}
+
+if [ $# -eq 0 ]
+then
+	bind_right
+	exit 0
+fi
+
+case "$1" in
+	-h | --help)
+		echo "bind-tablet - binds input tablet to specified monitor"
+		echo " "
+		echo "bind-tablet [ options ] [ left | right ]"
+		echo " "
+		echo "options:"
+		echo "-h, --help	display this help message"
+		echo "-i, --info	display the \"settings\""
+		exit 0
+		;;
+	-i | --info)
+		echo "bind-tablet settings - what this program thinks is going on"
+		echo "to modify these settings, edit the script"
+		echo " "
+		echo "Tablet Device: $name"
+		exit 0
+		;;
+	left )
+		bind_left
+		exit 0
+		;;
+	right)
+		bind_right
+		exit 0
+		;;
+esac
+
+
