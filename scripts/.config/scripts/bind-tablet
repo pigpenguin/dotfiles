@@ -1,6 +1,8 @@
 #! /bin/sh
 
-name="HID 256c:006d Pen Pen (0)"
+device_name="HID 256c:006d"
+pen="$device_name Pen stylus"
+pad="$device_name Pad pad"
 
 # Left
 # HDMI-0
@@ -34,13 +36,18 @@ name="HID 256c:006d Pen Pen (0)"
 
 bind_left()
 {
-	xinput set-prop "$name" --type=float "Coordinate Transformation Matrix" 0 -0.2967 0.2967 1 0 0 0 0 1
+	xinput set-prop "$pen" --type=float "Coordinate Transformation Matrix" 0 -0.2967 0.2967 1 0 0 0 0 1
 }
 
 bind_right()
 {
-	xinput set-prop "$name" --type=float "Coordinate Transformation Matrix" 0.70329 0 0.2967 0 0.75 0 0 0 1
+	xinput set-prop "$pen" --type=float "Coordinate Transformation Matrix" 0.70329 0 0.2967 0 0.75 0 0 0 1
 }
+
+# First map the buttons to the right places
+xsetwacom set "$pad" Button 1 11
+xsetwacom set "$pad" Button 2 12
+xsetwacom set "$pad" Button 3 13
 
 if [ $# -eq 0 ]
 then

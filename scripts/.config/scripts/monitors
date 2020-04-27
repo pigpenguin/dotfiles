@@ -1,0 +1,38 @@
+#! /bin/sh
+
+monitors=$(xrandr | grep " connected" |  sed "s/ primary//g; s/ connected//g; s/(.*//g; s/ /;/g")
+
+display_monitor()
+{
+	# Arguments:
+	# 1: Name
+	# 2: Width
+	# 3: Height
+	# 4: Offset_x
+	# 5: Offset_y
+	# 6: Orientation
+
+	if [ $# -lt 6 ]
+	then
+		orientation=normal
+	else
+		orientation=$6
+	fi
+
+	echo "Monitor found"
+	echo "Name:        $1"
+	echo "Shape:"
+	echo "	   Width: $2"
+	echo "	  Height: $3"
+	echo "	Offset X: $4"
+	echo "	Offset Y: $5"
+	echo "Orientation: $orientation"
+	echo " "
+}
+
+for i in $monitors
+do
+	echo $i
+	display_monitor $(echo $i | sed "s/[;+x]/ /g")
+done
+
