@@ -4,6 +4,7 @@
 
 PATH=$PATH:$HOME/scripts:$HOME/.config/scripts:$HOME/.local/bin
 
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -30,16 +31,19 @@ alias diff='colordiff -b -B'
 #Kitten specific stuff
 alias icat="kitty +kitten icat"
 
-function _update_ps1() {
-	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
-}
-
-
-if [ "$TERM" != "linux" ] && [ -f "/usr/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
 
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ];
 then
 	. $HOME/.nix-profile/etc/profile.d/nix.sh;
 fi
+
+function _update_ps1() {
+	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
+}
+
+
+if [ "$TERM" != "linux" ] && [ -x "$(command -v powerline-go)" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+eval "$(direnv hook bash)"
