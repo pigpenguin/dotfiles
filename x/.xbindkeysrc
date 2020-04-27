@@ -24,13 +24,13 @@
     XF86AudioRaiseVolume
 
 # Brightness controls
-"/usr/bin/xbacklight -dec 10"
-    m:0x0 + c:232
-    XF86MonBrightnessDown
+#"/usr/bin/xbacklight -dec 10"
+ #Pen (0)"   m:0x0 + c:232
+    #XF86MonBrightnessDown
 
-"/usr/bin/xbacklight -inc 10"
-    m:0x0 + c:233
-    XF86MonBrightnessUp
+#"/usr/bin/xbacklight -inc 10"
+    #m:0x0 + c:233
+    #XF86MonBrightnessUp
 
 
 # App launching
