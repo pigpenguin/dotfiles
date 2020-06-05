@@ -5,7 +5,6 @@
   programs.home-manager.enable = true;
 
   home.packages = [
-    pkgs.bat
     pkgs.broot
     pkgs.direnv
     pkgs.fossil
@@ -14,6 +13,13 @@
     #pkgs.pijul
     pkgs.powerline-go
   ];
+  
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "OneHalfDark";
+    };
+  };
 
   programs.neovim = {
     enable   = true; # Install neovim
