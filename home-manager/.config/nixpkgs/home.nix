@@ -21,6 +21,15 @@
     };
   };
 
+  programs.kitty = {
+    enable = true;
+    settings = {
+      allow_remote_control = true;
+      enable_audio_bell = false;
+    };
+    extraConfig = "background_opacity 0.8";
+  };
+
   programs.neovim = {
     enable   = true; # Install neovim
     viAlias  = true; # Alias vi to nvim
