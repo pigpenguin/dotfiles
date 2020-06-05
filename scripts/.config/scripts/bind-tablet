@@ -44,14 +44,17 @@ bind_right()
 	xinput set-prop "$pen" --type=float "Coordinate Transformation Matrix" 0.70329 0 0.2967 0 0.75 0 0 0 1
 }
 
-# First map the buttons to the right places
-xsetwacom set "$pad" Button 1 11
-xsetwacom set "$pad" Button 2 12
-xsetwacom set "$pad" Button 3 13
+bind_buttons()
+{
+	xsetwacom set "$pad" Button 1 11
+	xsetwacom set "$pad" Button 2 12
+	xsetwacom set "$pad" Button 3 13
+}
 
 if [ $# -eq 0 ]
 then
 	bind_right
+	bind_buttons
 	exit 0
 fi
 
@@ -75,10 +78,12 @@ case "$1" in
 		;;
 	left )
 		bind_left
+		bind_buttons
 		exit 0
 		;;
 	right)
 		bind_right
+		bind_buttons
 		exit 0
 		;;
 esac
