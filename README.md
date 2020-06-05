@@ -1,3 +1,7 @@
+These are my config files for my computer. Currently in the process of moving
+everything over to [home-manager](https://github.com/rycee/home-manager). Will
+update the readme when this is all over.
+
 Installation
 ============
 
