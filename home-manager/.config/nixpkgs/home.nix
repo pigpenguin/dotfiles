@@ -4,6 +4,10 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
   home.packages = [
     pkgs.direnv
     pkgs.fossil
@@ -18,6 +22,23 @@
     config = {
       theme = "OneHalfDark";
     };
+  };
+
+  programs.bash = {
+    enable = false; # Not 100% about this yet
+
+    shellAliases = {
+      mkdir = "mkdir -p";           # Create parent directories as needed
+      ls    = "ls --color";         # List with colors
+      cp    = "cp -i";              # Confirm before doing stupid stuff
+      mv    = "mv -i";              # Confirm before doing stupid stuff
+      rm    = "rm -i";              # Confirm before doing stupid stuff
+      diff  = "colordiff -b -B";    # Colordiff makes it colored
+                                    # -b ignore white space
+                                    # -B ignore blank lines
+      icat  = "kitty +kitten icat"; # View an image
+    };
+    
   };
 
   programs.broot = {

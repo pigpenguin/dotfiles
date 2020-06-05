@@ -49,3 +49,6 @@ fi
 eval "$(direnv hook bash)"
 
 source /home/corvid/.config/broot/launcher/bash/br
+
+# Until home manager manages bash for me, this sources session variables
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
