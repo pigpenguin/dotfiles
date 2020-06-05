@@ -1,11 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  xdg.enable = true;
+
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR               = "nvim";
+    TEXMFHOME            = "${config.xdg.configHome}/texmf";
+    LESSKEY              = "${config.xdg.configHome}/less/lesskey";
+    LESSHISTFILE         = "${config.xdg.cacheHome}/less/history";
+    MATHEMATICA_USERBASE = "${config.xdg.configHome}/mathematica";
+    # Mathematic has .Wolfram and "Wolfram Mathematica" dunno how to move those
   };
 
   home.packages = [
