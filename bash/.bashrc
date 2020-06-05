@@ -47,3 +47,5 @@ if [ "$TERM" != "linux" ] && [ -x "$(command -v powerline-go)" ]; then
 fi
 
 eval "$(direnv hook bash)"
+
+source /home/corvid/.config/broot/launcher/bash/br

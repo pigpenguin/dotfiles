@@ -17,3 +17,5 @@ if [ -d $HOME/.config/texmf ]
 then
 	export TEXMFHOME=$HOME/.config/texmf
 fi
+
+source /home/corvid/.config/broot/launcher/bash/br

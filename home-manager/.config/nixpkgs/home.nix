@@ -5,7 +5,6 @@
   programs.home-manager.enable = true;
 
   home.packages = [
-    pkgs.broot
     pkgs.direnv
     pkgs.fossil
     pkgs.lorri
@@ -19,6 +18,10 @@
     config = {
       theme = "OneHalfDark";
     };
+  };
+
+  programs.broot = {
+    enable = true;
   };
 
   programs.kitty = {
