@@ -38,7 +38,7 @@ then
 fi
 
 function _update_ps1() {
-	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,git,jobs,exit,root,vgo")"
+	  eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,gitlite,jobs,exit,root,vgo")"
 }
 
 
