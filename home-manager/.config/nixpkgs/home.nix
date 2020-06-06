@@ -19,9 +19,11 @@
     pkgs.direnv
     pkgs.fossil
     pkgs.lorri
+    #pkgs.nitrogen I can't work out how to make this persist at the moment
     pkgs.niv
     #pkgs.pijul
     pkgs.powerline-go
+    pkgs.youtube-dl
   ];
   
   programs.bat = {
