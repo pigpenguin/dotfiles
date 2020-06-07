@@ -42,15 +42,17 @@ export PROMPT_DIRTRIM=2
 function _update_ps1() {
     # This needs to run first to get the error of any user command
     if [ $? -eq 0 ]; then
-      arrow="\e[1;92m=>\e[0m"
+      arrow="\[\e[1;92m\]=>\[\e[0m\]"
     else
-      arrow="\e[1;31m=>\e[0m"
+      arrow="\[\e[1;31m\]=>\[\e[0m\]"
     fi
 
     gitstatus=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
     if [ $? -eq 0 ]; then
       gitstatus="  \e[32m$gitstatus"
+    else
+      gitstatus=""
     fi
 
     if [ ! -z $IN_NIX_SHELL ]; then
