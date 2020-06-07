@@ -8,11 +8,12 @@
 
   home.sessionVariables = {
     EDITOR               = "nvim";
-    TEXMFHOME            = "${config.xdg.configHome}/texmf";
+    GOPATH               = "${config.xdg.configHome}/go";
     LESSKEY              = "${config.xdg.configHome}/less/lesskey";
     LESSHISTFILE         = "${config.xdg.cacheHome}/less/history";
     MATHEMATICA_USERBASE = "${config.xdg.configHome}/mathematica";
-    # Mathematic has .Wolfram and "Wolfram Mathematica" dunno how to move those
+    TEXMFHOME            = "${config.xdg.configHome}/texmf";
+    # Mathematica has .Wolfram and "Wolfram Mathematica" dunno how to move those
   };
 
   home.packages = [
@@ -23,6 +24,7 @@
     pkgs.niv
     #pkgs.pijul
     pkgs.powerline-go
+    pkgs.ripgrep
     pkgs.youtube-dl
   ];
   
@@ -57,10 +59,34 @@
   programs.kitty = {
     enable = true;
     settings = {
+      # Seoul256 Terminal colors
+      background           = "#3a3a3a";
+      foreground           = "#d0d0d0";
+      color0               = "#4e4e4e";
+      color1               = "#d68787";
+      color2               = "#5f865f";
+      color3               = "#d8af5f";
+      color4               = "#85add4";
+      color5               = "#d7afaf";
+      color6               = "#87afaf";
+      color7               = "#d0d0d0";
+      color8               = "#626262";
+      color9               = "#d75f87";
+      color10              = "#87af87";
+      color11              = "#ffd787";
+      color12              = "#add4fb";
+      color13              = "#ffafaf";
+      color14              = "#87d7d7";
+      color15              = "#e4e4e4";
+      cursor               = "#d0d0d0";
+      selection_foreground = "#D1D1D1";
+      selection_background = "#005E5E";
+      adjust_line_height   = 5;
+      font_size            = "13.0";
+      #background_opacity   = "0.9"; looks bad with these colors
       allow_remote_control = true;
-      enable_audio_bell = false;
+      enable_audio_bell    = false;
     };
-    extraConfig = "background_opacity 0.8";
   };
 
   programs.neovim = {
