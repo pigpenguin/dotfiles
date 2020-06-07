@@ -47,18 +47,19 @@ function _update_ps1() {
       arrow="\e[1;31m=>\e[0m"
     fi
 
-	  #eval "$(powerline-go -error $? -eval -cwd-max-depth 2 -modules "nix-shell,venv,cwd,perms,gitlite,jobs,exit,root,vgo")"
     gitstatus=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
     if [ $? -eq 0 ]; then
-      gitstatus=" \e[32m $gitstatus"
+      gitstatus="  \e[32m$gitstatus"
     fi
 
     if [ ! -z $IN_NIX_SHELL ]; then
-      nixstatus="\e[31mλ $IN_NIX_SHELL  "
+      nixstatus="\e[31m$IN_NIX_SHELL  "
+    else
+      nixstatus=""
     fi
 
-    export PS1="\e[1m $nixstatus\e[34m \w $gitstatus\e[0m \n $arrow "
+    export PS1=" \e[1m$nixstatus\e[34m\w$gitstatus\e[0m \n $arrow "
 }
 
 
