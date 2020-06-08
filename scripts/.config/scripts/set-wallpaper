@@ -2,7 +2,7 @@
 usage="usage: set-wallpaper monitor(1 for primary 2 for secondary) image"
 
 # Where nitrogen is looking for files
-directory=~/Images/Wallpapers
+directory="$XDG_DATA_HOME/wallpapers"
 
 function setWallpaper {	
 	# Tells nitrogen to apply the images currently linke in the wallpaper directory
