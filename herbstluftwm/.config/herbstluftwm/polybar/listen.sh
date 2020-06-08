@@ -1,6 +1,9 @@
 #! /bin/sh
 
-lock=$HOME/.cache/hlwmlisten
+lock=$XDG_CACHE_HOME/hlwmlisten
+
+# This just makes sure there is a single instance
+# of this running. I've forgotten exactly how tho
 
 {
 flock -n 9 || exit 1
