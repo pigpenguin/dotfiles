@@ -1,6 +1,7 @@
 #! /bin/sh
 
-lock=$XDG_CACHE_HOME/hlwmlisten
+#lock=$XDG_CACHE_HOME/hlwmlisten
+lock=$HOME/.cache/hlwmlisten
 
 # This just makes sure there is a single instance
 # of this running. I've forgotten exactly how tho
