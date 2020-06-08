@@ -24,6 +24,7 @@
     pkgs.niv
     #pkgs.pijul
     pkgs.ripgrep
+    pkgs.sxiv
     pkgs.youtube-dl
   ];
   
@@ -80,7 +81,7 @@
       cursor               = "#d0d0d0";
       selection_foreground = "#D1D1D1";
       selection_background = "#005E5E";
-      adjust_line_height   = 5;
+      adjust_line_height   = "126%";
       font_size            = "13.0";
       #background_opacity   = "0.9"; looks bad with these colors
       allow_remote_control = true;
