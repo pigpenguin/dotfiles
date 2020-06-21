@@ -13,20 +13,29 @@ hc set frame_bg_transparent 1
 hc set frame_transparent_width 5
 hc set frame_gap 20
 
-hc attr theme.inner_width 4
-hc attr theme.border_width 8
-hc attr theme.floating.border_width 4
+#hc attr theme.frame_border_inner_width 3
+hc attr theme.border_width 3
+hc attr theme.floating.border_width 3
 hc attr theme.floating.outer_width 1
 
 hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
-hc set smart_frame_surroundings 1
+# This prevents padding on initial frame messing with the bar
+hc set smart_frame_surroundings 0
 hc set mouse_recenter_gap 0
+hc set always_show_frame 0
+# Fake window swallowing
+hc set default_frame_layout 2  # This doesn't seem to do anything
+hc set_layout max              # This sets all the frame layouts to max
+                               # Based on my understanding of the man page this
+                               # is not how this should work
+
+hc pad 1 60
 
 # padding
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-	hc pad $monitor 60
-done
+#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+	#hc pad $monitor 60
+#done
 
 herbstclient chain $cmds

@@ -80,7 +80,9 @@ hc mousebind $Mod-Button3 resize
 hc keybind $Mod-BackSpace   cycle_monitor
 hc keybind $Mod-Tab         cycle_all +1
 hc keybind $Mod-Shift-Tab   cycle_all -1
-hc keybind $Mod-c cycle
+#TODO work out if I can add this back
+#This is actually kind of nice conflicts with fzf
+#hc keybind $Mod-c cycle
 hc keybind $Mod-i toggle always_show_frame
 
 herbstclient chain $cmds
