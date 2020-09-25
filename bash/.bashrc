@@ -37,7 +37,7 @@ then
 	. $HOME/.nix-profile/etc/profile.d/nix.sh;
 fi
 
-# Only displaye 2 directorys deep
+# Only display 2 directorys deep
 export PROMPT_DIRTRIM=2
 function _update_ps1() {
     # This needs to run first to get the error of any user command
@@ -72,6 +72,8 @@ fi
 eval "$(direnv hook bash)"
 
 source /home/corvid/.config/broot/launcher/bash/br
+source /usr/share/fzf/completion.bash
+source /usr/share/fzf/key-bindings.bash
 
 # Until home manager manages bash for me, this sources session variables
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
