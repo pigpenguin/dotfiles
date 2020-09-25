@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+work_length="25m"
+rest_length="5m"
+
+notify-send -u low "Pomodoro" "Pomodoro started"
+sleep $work_length
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga &
+notify-send "Pomodoro" "Take a break"
+sleep $rest_length
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga &
+notify-send -u critical "Pomodoro" "Break is over"
